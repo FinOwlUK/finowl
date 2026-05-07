@@ -9045,8 +9045,9 @@ app.use((err, req, res, next) => {
 // Render terminates TLS at its load balancer and serves HTTP/2 to clients
 // automatically. The app runs plain HTTP/1.1 behind the proxy — this is the
 // correct architecture. No application-level HTTP/2 or TLS config needed.
-app.listen(port, () => 
+app.listen(port, () => {
   console.log(`FinOwl server running on port ${port}`);
+});
   // Log Stripe configuration status at startup
   if (process.env.STRIPE_SECRET_KEY) {
     console.log('[stripe-direct] ✓ Stripe configured — direct account checkout sessions active');
