@@ -9063,5 +9063,5 @@ app.listen(port, () => {
   // Run recurring invoice processor at startup to catch any missed schedules
   processRecurringInvoices().catch(err =>
     console.error('[RecurringInvoices] Startup run failed:', err)
-  )
+  );
 });
