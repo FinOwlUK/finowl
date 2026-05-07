@@ -9047,20 +9047,22 @@ app.use((err, req, res, next) => {
 // correct architecture. No application-level HTTP/2 or TLS config needed.
 app.listen(port, () => {
   console.log(`FinOwl server running on port ${port}`);
-});
+
   // Log Stripe configuration status at startup
   if (process.env.STRIPE_SECRET_KEY) {
-    console.log('[stripe-direct] ✓ Stripe configured — direct account checkout sessions active');
+    console.log('[stripe-direct] ✓ Stripe configured – direct account checkout sessions active');
+
     if (process.env.STRIPE_WEBHOOK_SECRET) {
-      console.log('[stripe-direct] ✓ Webhook signing secret set — POST /api/webhook ready');
+      console.log('[stripe-direct] ✓ Webhook signing secret set – POST /api/webhook ready');
     } else {
-      console.warn('[stripe-direct] ⚠ STRIPE_WEBHOOK_SECRET not set — webhooks will be rejected');
+      console.warn('[stripe-direct] ⚠ STRIPE_WEBHOOK_SECRET not set – webhooks will be rejected');
     }
   } else {
-    console.warn('[stripe-direct] ⚠ STRIPE_SECRET_KEY not set — checkout will fall back to static (USD) payment links');
+    console.warn('[stripe-direct] ⚠ STRIPE_SECRET_KEY not set – checkout will fall back to static mode');
   }
+
   startNotificationScheduler(pool);
-  // Run recurring invoice processor at startup to catch any missed schedules
+
   processRecurringInvoices().catch(err =>
     console.error('[RecurringInvoices] Startup run failed:', err)
   );
