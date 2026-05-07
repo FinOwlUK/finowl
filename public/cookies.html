@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy — FinOwl</title>
+    <meta name="description" content="FinOwl Cookie Policy. What cookies we use, why we use them, and how to manage your preferences. ICO-compliant.">
+    <meta name="theme-color" content="#d4920b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FinOwl">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0a0f1a;
+            --paper: #faf9f6;
+            --amber: #d4920b;
+            --amber-light: #f5dfa3;
+            --sage: #2d6a4f;
+            --sage-light: #d8f3dc;
+            --muted: #6b7280;
+            --border: #e5e2db;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-owl {
+            width: 36px; height: 36px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-tag {
+            font-size: 0.75rem;
+            background: var(--amber-light);
+            color: var(--amber);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .page-hero {
+            background: var(--ink);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero-inner { max-width: 720px; margin: 0 auto; }
+
+        .page-hero .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--amber-light);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.6); }
+
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 999px;
+            padding: 0.45rem 1rem;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 1.75rem;
+        }
+
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 5rem 2rem 6rem;
+        }
+
+        .sec-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sec-card h2 {
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sec-num {
+            width: 32px; height: 32px;
+            background: var(--amber-light);
+            color: var(--amber);
+            border-radius: 8px;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+        }
+
+        .sec-card p { margin-bottom: 1rem; color: #374151; font-size: 0.97rem; }
+        .sec-card p:last-child { margin-bottom: 0; }
+
+        .sec-card ul, .sec-card ol { margin: 0.75rem 0 1rem 1.5rem; color: #374151; font-size: 0.97rem; }
+        .sec-card li { margin-bottom: 0.5rem; }
+
+        .sec-card h3 { font-size: 1.05rem; margin: 1.5rem 0 0.6rem; color: var(--ink); }
+        .sec-card h3:first-of-type { margin-top: 0.25rem; }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.91rem;
+        }
+
+        .cookie-table th {
+            background: #f8f7f4;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+            font-size: 0.84rem;
+            color: var(--ink);
+        }
+
+        .cookie-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: #374151;
+            vertical-align: top;
+        }
+
+        .cookie-table tr:last-child td { border-bottom: none; }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .badge-essential { background: var(--sage-light); color: var(--sage); }
+        .badge-analytics { background: #dbeafe; color: #1d4ed8; }
+        .badge-functional { background: var(--amber-light); color: var(--amber); }
+
+        .consent-box {
+            background: #f8f7f4;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 1.25rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .consent-box .icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .consent-box h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .consent-box p {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: #fffbf0;
+            border: 1px solid #f0d9a0;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: #7c5a00;
+        }
+
+        .highlight-box strong { color: #5c4000; }
+
+        a { color: var(--amber); }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer a { color: var(--amber); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .content { padding: 3rem 1.25rem 4rem; }
+            .sec-card { padding: 1.75rem; }
+            .cookie-table { font-size: 0.82rem; }
+            .cookie-table th, .cookie-table td { padding: 0.6rem 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-owl">🦉</span>
+            FinOwl
+        </a>
+        <span class="nav-tag">Legal</span>
+    </nav>
+
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <p class="label">Legal</p>
+            <h1>Cookie Policy</h1>
+            <p>What cookies FinOwl uses, why, and how to control them. In plain English.</p>
+            <span class="last-updated">Last updated: 14 April 2026 &middot; UK ICO Compliant</span>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- WHAT ARE COOKIES -->
+        <div class="sec-card" id="what">
+            <h2><span class="sec-num">1</span> What Are Cookies?</h2>
+            <p>Cookies are small text files that websites store on your device (computer, phone, or tablet) when you visit them. They are widely used to make websites work properly, remember your preferences, and provide information to site owners.</p>
+            <p>FinOwl uses cookies and similar technologies (such as localStorage and sessionStorage) to keep you logged in, understand how you use the platform, and respect your preferences.</p>
+            <p>This policy explains what we use, why, and how to manage or delete them. For more detail on how we handle personal data generally, see our <a href="/privacy.html">Privacy Policy</a>.</p>
+        </div>
+
+        <!-- TYPES WE USE -->
+        <div class="sec-card" id="types">
+            <h2><span class="sec-num">2</span> Types of Cookies We Use</h2>
+            <p>FinOwl uses three categories of cookies and browser storage:</p>
+
+            <div class="consent-box">
+                <span class="icon">🔒</span>
+                <div>
+                    <h4>Strictly Necessary</h4>
+                    <p>Essential for the platform to function. Cannot be disabled. No consent required under ICO rules.</p>
+                </div>
+            </div>
+
+            <div class="consent-box">
+                <span class="icon">📊</span>
+                <div>
+                    <h4>Analytics</h4>
+                    <p>Help us understand how users find and use FinOwl. Only set with your consent via the cookie banner.</p>
+                </div>
+            </div>
+
+            <div class="consent-box">
+                <span class="icon">⚙️</span>
+                <div>
+                    <h4>Functional</h4>
+                    <p>Remember your preferences and improve your experience. Some require consent, some are strictly necessary.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>No advertising cookies.</strong> FinOwl does not use advertising, targeting, or third-party tracking cookies. We do not share data with ad networks.
+            </div>
+        </div>
+
+        <!-- COOKIE INVENTORY -->
+        <div class="sec-card" id="inventory">
+            <h2><span class="sec-num">3</span> Cookie Inventory</h2>
+            <p>The following table lists the specific cookies and browser storage items FinOwl uses:</p>
+
+            <h3>Authentication &amp; Session (Strictly Necessary)</h3>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>token</code> (localStorage)</td>
+                        <td>localStorage</td>
+                        <td>Stores your JWT authentication token to keep you logged in to the dashboard</td>
+                        <td>30 days or until logout</td>
+                        <td><span class="badge badge-essential">Essential</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>finowl_cookie_consent</code></td>
+                        <td>localStorage</td>
+                        <td>Records your cookie consent preference (accepted / declined) so we don't show the banner repeatedly</td>
+                        <td>1 year</td>
+                        <td><span class="badge badge-essential">Essential</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Analytics (Consent Required)</h3>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>finowl_sid</code></td>
+                        <td>sessionStorage</td>
+                        <td>Anonymous session identifier used to group page views in a single visit for analytics purposes. Not linked to your account.</td>
+                        <td>Session (deleted when browser tab closes)</td>
+                        <td><span class="badge badge-analytics">Analytics</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>finowl_utm</code></td>
+                        <td>sessionStorage</td>
+                        <td>Stores UTM campaign parameters (utm_source, utm_medium, etc.) to understand which marketing channels drive sign-ups. Deleted when the browser tab closes.</td>
+                        <td>Session</td>
+                        <td><span class="badge badge-analytics">Analytics</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>polsia_vid</code></td>
+                        <td>localStorage</td>
+                        <td>Anonymous visitor identifier used by our first-party analytics system. Not linked to your account or personal data. Used to measure unique visitor counts across sessions.</td>
+                        <td>1 year</td>
+                        <td><span class="badge badge-analytics">Analytics</span></td>
+                    </tr>
+                    <tr>
+                        <td>Google Analytics (GA4) cookies (<code>_ga</code>, <code>_ga_*</code>)</td>
+                        <td>Cookie</td>
+                        <td>Set only if you accept analytics cookies. Used to measure page views, session duration, and user behaviour in aggregate. No personally identifiable information is sent to Google.</td>
+                        <td>Up to 2 years</td>
+                        <td><span class="badge badge-analytics">Analytics</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Functional (Mixed)</h3>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PWA install state</td>
+                        <td>localStorage</td>
+                        <td>Remembers whether you have been shown the "Add to Home Screen" prompt for the FinOwl PWA, to avoid showing it repeatedly.</td>
+                        <td>Persistent</td>
+                        <td><span class="badge badge-essential">Essential</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dashboard UI state</td>
+                        <td>localStorage / sessionStorage</td>
+                        <td>Remembers your selected tab, filters, and layout preferences within the dashboard so they persist between page loads within a session.</td>
+                        <td>Session / Persistent</td>
+                        <td><span class="badge badge-functional">Functional</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- THIRD-PARTY -->
+        <div class="sec-card" id="third-party">
+            <h2><span class="sec-num">4</span> Third-Party Cookies</h2>
+            <p>FinOwl loads resources from the following third parties that may set their own cookies:</p>
+
+            <h3>Google Fonts</h3>
+            <p>We use Google Fonts to serve our typography (Space Grotesk and DM Sans). Google may set cookies or collect technical data (IP address, browser type) when serving fonts. This is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>. We are exploring self-hosting fonts to eliminate this third-party request.</p>
+
+            <h3>Google Analytics (GA4)</h3>
+            <p>Only loaded with your consent. If you accept analytics cookies, Google Analytics 4 is loaded and may set cookies (<code>_ga</code>, <code>_ga_*</code>). These are used to measure aggregate usage patterns. IP addresses are anonymised before transmission to Google. Governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+
+            <h3>Stripe</h3>
+            <p>When you visit our checkout page (hosted by Stripe), Stripe may set cookies for fraud prevention and payment processing. These are governed by <a href="https://stripe.com/gb/privacy" target="_blank">Stripe's Privacy Policy</a>. These cookies are only set on Stripe's own hosted checkout pages, not on finowl.co.uk itself.</p>
+
+            <p>We do not use cookies from social media platforms, advertising networks, or any other third parties not listed here.</p>
+        </div>
+
+        <!-- CONSENT & MANAGEMENT -->
+        <div class="sec-card" id="consent">
+            <h2><span class="sec-num">5</span> Your Consent &amp; How to Manage Cookies</h2>
+
+            <h3>Our cookie banner</h3>
+            <p>When you first visit FinOwl's landing page, you will see a cookie consent banner. You can choose:</p>
+            <ul>
+                <li><strong>Accept all:</strong> We set all cookies described in this policy, including analytics cookies.</li>
+                <li><strong>Decline:</strong> Only strictly necessary cookies are set. Analytics cookies are not loaded.</li>
+            </ul>
+
+            <h3>Changing your mind</h3>
+            <p>You can update your cookie preferences at any time by clearing the <code>finowl_cookie_consent</code> value from your browser's localStorage. The cookie banner will reappear on your next visit to the landing page. To do this:</p>
+            <ol>
+                <li>Open your browser's Developer Tools (press F12)</li>
+                <li>Go to Application &rarr; Local Storage &rarr; finowl.co.uk</li>
+                <li>Delete the <code>finowl_cookie_consent</code> entry</li>
+                <li>Refresh the page — the consent banner will reappear</li>
+            </ol>
+
+            <h3>Browser-level cookie controls</h3>
+            <p>You can control and delete cookies directly through your browser settings. Below are links to instructions for common browsers:</p>
+            <ul>
+                <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
+                <li><a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" target="_blank">Mozilla Firefox</a></li>
+                <li><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank">Apple Safari</a></li>
+                <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Microsoft Edge</a></li>
+            </ul>
+            <p>Please note: disabling strictly necessary cookies will prevent FinOwl from working correctly. You will not be able to stay logged in if you block all cookies.</p>
+
+            <h3>Google Analytics opt-out</h3>
+            <p>You can opt out of Google Analytics tracking across all websites by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a>.</p>
+        </div>
+
+        <!-- ICO & LEGAL BASIS -->
+        <div class="sec-card" id="legal">
+            <h2><span class="sec-num">6</span> Legal Basis for Cookies</h2>
+            <p>Our use of cookies complies with the UK's Privacy and Electronic Communications Regulations (PECR) and the UK GDPR, as interpreted by the Information Commissioner's Office (ICO):</p>
+            <ul>
+                <li><strong>Strictly necessary cookies:</strong> No consent required under PECR Regulation 6(4). These are essential for the service to function.</li>
+                <li><strong>Analytics and functional cookies:</strong> Require your consent under PECR Regulation 6(1). We obtain this via our cookie banner before setting these cookies.</li>
+            </ul>
+            <p>Where we rely on consent, you have the right to withdraw it at any time without detriment. See Section 5 above for how to do this.</p>
+            <p>If you have a complaint about our use of cookies, you can contact the Information Commissioner's Office:</p>
+            <ul>
+                <li><strong>ICO Website:</strong> <a href="https://ico.org.uk" target="_blank">ico.org.uk</a></li>
+                <li><strong>ICO Helpline:</strong> 0303 123 1113</li>
+            </ul>
+        </div>
+
+        <!-- CHANGES -->
+        <div class="sec-card" id="changes">
+            <h2><span class="sec-num">7</span> Changes to This Policy</h2>
+            <p>We may update this Cookie Policy from time to time as our technology or legal requirements change. Material changes will be communicated via our cookie consent banner and, where appropriate, by email.</p>
+            <p>The "Last updated" date at the top of this page always reflects the current version.</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="sec-card" id="contact">
+            <h2><span class="sec-num">8</span> Contact</h2>
+            <p>Questions about cookies or this policy? Contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:finowl@polsia.app">finowl@polsia.app</a></li>
+                <li><strong>Subject:</strong> "Cookie Policy Enquiry"</li>
+            </ul>
+            <p>We aim to respond within 5 business days.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 FinOwl &middot; Built by <a href="https://polsia.com" target="_blank">Polsia</a> &middot; London, UK</p>
+        <div class="footer-links">
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/cookies.html">Cookie Policy</a>
+            <a href="/security.html">Security &amp; Compliance</a>
+        </div>
+    </footer>
+
+    <script src="/pwa-install.js" defer></script>
+</body>
+</html>

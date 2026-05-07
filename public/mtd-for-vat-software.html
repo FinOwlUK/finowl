@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang=\"en-GB\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>MTD for VAT Software — FinOwl | HMRC-Compliant Bookkeeping for UK Small Businesses</title>
+    <meta name=\"description\" content=\"Need MTD for VAT software? FinOwl automatically keeps digital records, categorises transactions, and prepares VAT returns for HMRC submission. No spreadsheet bridges. No manual uploads. Start free.\">
+    <meta name=\"robots\" content=\"index, follow\">
+    <link rel=\"canonical\" href=\"https://finowl.co.uk/mtd-for-vat-software\">
+    <meta property=\"og:title\" content=\"MTD for VAT Software — FinOwl | HMRC-Compliant Bookkeeping\">
+    <meta property=\"og:description\" content=\"Automate VAT record keeping and returns. MTD-compliant from day one. FinOwl connects to your bank and does the bookkeeping for you.\">
+    <meta property=\"og:url\" content=\"https://finowl.co.uk/mtd-for-vat-software\">
+    <meta property=\"og:type\" content=\"article\">
+    <meta property=\"og:locale\" content=\"en_GB\">
+    <meta name=\"twitter:card\" content=\"summary\">
+    <meta name=\"theme-color\" content=\"#d4920b\">
+    <link rel=\"apple-touch-icon\" href=\"/icons/icon-192.svg\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap\" rel=\"stylesheet\">
+
+    <script type=\"application/ld+json\">
+    {
+      \"@context\": \"https://schema.org\",
+      \"@type\": \"Article\",
+      \"headline\": \"MTD for VAT Software: What UK Small Businesses Need to Know\",
+      \"description\": \"A practical guide to MTD for VAT software for UK sole traders and small businesses. Covers HMRC requirements, how compliant software works, and why automation matters.\",
+      \"author\": { \"@type\": \"Organization\", \"name\": \"FinOwl\" },
+      \"publisher\": { \"@type\": \"Organization\", \"name\": \"FinOwl\", \"url\": \"https://finowl.co.uk\" },
+      \"datePublished\": \"2026-04-26\",
+      \"dateModified\": \"2026-04-26\",
+      \"mainEntityOfPage\": \"https://finowl.co.uk/mtd-for-vat-software\",
+      \"about\": {
+        \"@type\": \"Thing\",
+        \"name\": \"MTD for VAT\",
+        \"description\": \"HMRC's Making Tax Digital programme for VAT-registered businesses\"
+      }
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0a0f1a;
+            --paper: #faf9f6;
+            --amber: #d4920b;
+            --amber-light: #f5dfa3;
+            --amber-hover: #b87d09;
+            --sage: #2d6a4f;
+            --sage-light: #d8f3dc;
+            --muted: #6b7280;
+            --border: #e5e2db;
+            --surface: #fff;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--ink);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-owl {
+            width: 34px;
+            height: 34px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--ink); }
+
+        .btn-nav {
+            background: var(--amber);
+            color: #fff;
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-nav:hover { background: var(--amber-hover); color: #fff; }
+
+        /* ARTICLE CONTAINER */
+        .article-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a { color: var(--muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--amber); }
+        .breadcrumb span { margin: 0 0.4rem; }
+
+        /* HEADER */
+        .article-header {
+            margin-bottom: 3rem;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: var(--amber-light);
+            color: var(--amber);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        h1.article-title {
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        /* PROSE */
+        .prose p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        .prose h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            color: var(--ink);
+        }
+
+        .prose h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.75rem;
+            color: var(--ink);
+        }
+
+        .prose ul, .prose ol {
+            margin: 1rem 0 1.4rem 1.4rem;
+        }
+
+        .prose li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-size: 0.95rem;
+        }
+
+        .prose a { color: var(--amber); text-decoration: underline; }
+
+        /* CALLOUT BOX */
+        .callout {
+            background: var(--sage-light);
+            border-left: 4px solid var(--sage);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.8rem 0;
+        }
+
+        .callout p {
+            font-size: 0.9rem;
+            color: var(--sage);
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .callout strong { font-weight: 700; }
+
+        /* WARNING BOX */
+        .warning-box {
+            background: #fff8e6;
+            border-left: 4px solid var(--amber);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.8rem 0;
+        }
+
+        .warning-box p {
+            font-size: 0.9rem;
+            color: #92400e;
+            margin-bottom: 0;
+        }
+
+        /* FEATURE GRID */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.8rem 0;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .feature-card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--ink);
+        }
+
+        .feature-card p {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        /* FAQ ACCORDION */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 0;
+        }
+
+        .faq-q {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--ink);
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #4b5563;
+            line-height: 1.65;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--ink);
+            color: #fff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: var(--amber);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-cta:hover { opacity: 0.85; color: #fff; }
+
+        .cta-sub {
+            font-size: 0.78rem;
+            opacity: 0.6;
+            margin-top: 0.75rem;
+        }
+
+        /* IN-ARTICLE CTA */
+        .inline-cta {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--amber-light);
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .inline-cta a {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--amber);
+            text-decoration: none;
+        }
+
+        .inline-cta a:hover { text-decoration: underline; }
+
+        .inline-cta span {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--amber);
+            opacity: 0.7;
+            margin-top: 0.3rem;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        .comparison-table th {
+            background: var(--ink);
+            color: #fff;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+        }
+
+        .comparison-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .comparison-table tr:nth-child(even) td { background: #f9f8f5; }
+
+        .check { color: var(--sage); font-weight: 700; }
+        .cross { color: #dc2626; }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        footer a { color: var(--muted); text-decoration: underline; }
+
+        /* RESPONSIVE */
+        @media (max-width: 640px) {
+            nav { padding: 1rem; }
+            .nav-links { display: none; }
+            .article-wrap { padding: 1.5rem 1rem 4rem; }
+            h1.article-title { font-size: 1.7rem; }
+            .feature-grid { grid-template-columns: 1fr 1fr; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.5rem 0.6rem; }
+        }
+
+        @media (min-width: 641px) and (max-width: 900px) {
+            .nav-links a:not(.btn-nav) { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href=\"/\" class=\"logo\">
+        <div class=\"logo-owl\">&#128996;</div>
+        FinOwl
+    </a>
+    <div class=\"nav-links\">
+        <a href=\"/#features\">Features</a>
+        <a href=\"/#pricing\">Pricing</a>
+        <a href=\"/#faq\">FAQ</a>
+        <a href=\"/signup\" class=\"btn-nav\">Start free</a>
+    </div>
+</nav>
+
+<!-- ARTICLE -->
+<div class=\"article-wrap\">
+
+    <div class=\"breadcrumb\">
+        <a href=\"/\">FinOwl</a>
+        <span>&#8594;</span>
+        <a href=\"/mtd-for-vat-software\">MTD for VAT Software</a>
+    </div>
+
+    <header class=\"article-header\">
+        <span class=\"article-tag\">HMRC Compliance</span>
+        <h1 class=\"article-title\">MTD for VAT Software: What Every UK Small Business Needs to Know</h1>
+        <p class=\"article-meta\">Updated April 2026 &middot; 8 min read &middot; FinOwl</p>
+    </header>
+
+    <div class=\"prose\">
+
+        <p>Since April 2022, all VAT-registered businesses in the UK must follow <strong>Making Tax Digital (MTD) for VAT</strong> rules. That means keeping digital records and submitting VAT returns through HMRC-recognised software &mdash; no more typing numbers into HMRC's website manually.</p>
+
+        <p>If you're still using spreadsheets or manual processes, you're breaking the law &mdash; and making your bookkeeping harder than it needs to be. The right MTD for VAT software solves both problems at once.</p>
+
+        <div class=\"callout\">
+            <p><strong>FinOwl is MTD for VAT compliant.</strong> Connect your bank, and your records are automatically kept digitally and categorised. When your VAT return is due, the figures are ready to submit.</p>
+        </div>
+
+        <!-- Section: What is MTD for VAT -->
+        <h2>What Is MTD for VAT, Exactly?</h2>
+
+        <p>Making Tax Digital (MTD) is HMRC's programme to modernise how UK businesses handle tax. For VAT, it has two core requirements:</p>
+
+        <ol>
+            <li><strong>Keep digital records</strong> &mdash; in MTD-compliant software, not paper notebooks or spreadsheets</li>
+            <li><strong>Submit VAT returns digitally</strong> &mdash; through software that connects directly to HMRC's API</li>
+        </ol>
+
+        <p>MTD for VAT has applied to all VAT-registered businesses since April 2022 &mdash; including sole traders, partnerships, and limited companies. There are no exemptions based on business size. If you're VAT-registered, MTD applies to you.</p>
+
+        <p>The penalty regime is real. Late filing and late payment attract fines and interest. And HMRC is increasingly sophisticated at identifying non-compliant businesses through data-matching across VAT, Income Tax Self Assessment, and other records.</p>
+
+        <!-- Section: What you need -->
+        <h2>What MTD-Compliant Software Must Do</h2>
+
+        <p>HMRC sets specific technical requirements. Software isn't just a \"submit\" button &mdash; it must handle the full record-keeping lifecycle:</p>
+
+        <table class=\"comparison-table\">
+            <thead>
+                <tr>
+                    <th>MTD Requirement</th>
+                    <th>FinOwl</th>
+                    <th>Spreadsheets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Digital record keeping (no paper)</td>
+                    <td class=\"check\">&#10003;</td>
+                    <td class=\"cross\">&#10007;</td>
+                </tr>
+                <tr>
+                    <td>Direct API submission to HMRC</td>
+                    <td class=\"check\">&#10003;</td>
+                    <td class=\"cross\">&#10007;</td>
+                </tr>
+                <tr>
+                    <td>Automatic transaction categorisation</td>
+                    <td class=\"check\">&#10003;</td>
+                    <td class=\"cross\">&#10007;</td>
+                </tr>
+                <tr>
+                    <td>VAT rate calculation per transaction</td>
+                    <td class=\"check\">&#10003;</td>
+                    <td class=\"cross\">&#10007;</td>
+                </tr>
+                <tr>
+                    <td>VAT return preparation (auto-populated)</td>
+                    <td class=\"check\">&#10003;</td>
+                    <td class=\"cross\">&#10007;</td>
+                </tr>
+                <tr>
+                    <td>Bank feed integration</td>
+                    <td class=\"check\">&#10003;</td>
+                    <td class=\"cross\">&#10007;</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Using spreadsheets &mdash; even well-formatted ones &mdash; doesn't make you MTD-compliant. HMRC explicitly requires software that maintains digital records and submits via API. You can't bridge your way to compliance with a spreadsheet upload tool.</p>
+
+        <!-- Section: Who needs it -->
+        <h2>Who Needs MTD for VAT Software?</h2>
+
+        <p><strong>Every VAT-registered business.</strong> There are no size thresholds for MTD for VAT &mdash; unlike MTD for Income Tax (ITSA), which has income-based thresholds. If your business is registered for VAT, MTD rules apply.</p>
+
+        <p>This includes:</p>
+
+        <ul>
+            <li><strong>Sole traders</strong> registered for VAT (even if your turnover is below the VAT threshold)</li>
+            <li><strong>Limited companies</strong> registered for VAT</li>
+            <li><strong>Partnerships</strong> registered for VAT</li>
+            <li><strong>Charities and other organisations</strong> registered for VAT</li>
+        </ul>
+
+        <p>If your VAT taxable turnover is below the registration threshold (&pound;85,000), you don't have to register for VAT &mdash; but if you choose to register voluntarily, MTD rules still apply once registered.</p>
+
+        <!-- Section: Features -->
+        <h2>What Good MTD for VAT Software Looks Like</h2>
+
+        <p>MTD compliance is the baseline. What makes software worth using is whether it actually reduces your admin workload. Here's what to look for:</p>
+
+        <div class=\"feature-grid\">
+            <div class=\"feature-card\">
+                <div class=\"feature-card-icon\">&#128179;</div>
+                <h4>Automatic Bank Feeds</h4>
+                <p>Transactions appear in your records as they happen. No manual entry.</p>
+            </div>
+            <div class=\"feature-card\">
+                <div class=\"feature-card-icon\">&#128269;</div>
+                <h4>AI Transaction Categorisation</h4>
+                <p>Income and expenses sorted into the right VAT categories automatically.</p>
+            </div>
+            <div class=\"feature-card\">
+                <div class=\"feature-card-icon\">&#9744;</div>
+                <h4>VAT Rate Handling</h4>
+                <p>Correct rates applied: 20% standard, 5% reduced, 0% and exempt &mdash; no guesswork.</p>
+            </div>
+            <div class=\"feature-card\">
+                <div class=\"feature-card-icon\">&#128220;</div>
+                <h4>VAT Return Preparation</h4>
+                <p>Your VAT return figures are ready when the quarter closes, not cobbled together last-minute.</p>
+            </div>
+            <div class=\"feature-card\">
+                <div class=\"feature-card-icon\">&#128274;</div>
+                <h4>Secure Record Storage</h4>
+                <p>Digital records kept for at least 6 years, as required by HMRC.</p>
+            </div>
+        </div>
+
+        <!-- Section: Choosing -->
+        <h2>Choosing MTD for VAT Software: What to Avoid</h2>
+
+        <p>Not all software is equal. Watch out for these common traps:</p>
+
+        <h3>Bridging software</h3>
+        <p>Bridging tools let you keep records in spreadsheets and then upload them to HMRC. HMRC tolerated bridging during the transition period, but it's no longer acceptable. True MTD compliance requires your software to maintain records digitally, not just \"bridge\" a spreadsheet to HMRC at submission time.</p>
+
+        <h3>Overcomplicated accounting software</h3>
+        <p>Full accounting platforms (Xero, FreeAgent, Sage) are powerful &mdash; but they require significant setup, training, and ongoing maintenance. For sole traders with straightforward VAT needs, a purpose-built MTD tool can deliver compliance without the complexity overhead.</p>
+
+        <h3>Software without API integration</h3>
+        <p>HMRC's MTD system requires software to communicate via a specific API. If a tool doesn't have this, it's not MTD-compliant regardless of what it calls itself.</p>
+
+        <div class=\"warning-box\">
+            <p><strong>MTD for Income Tax is coming.</strong> From 6 April 2026, self-employed businesses and landlords with income over &pound;50,000 (2024/25 tax year) must use MTD-compliant software for Income Tax Self Assessment too. If you're approaching this threshold, choosing software that handles both VAT and Income Tax from the start saves a future migration.</p>
+        </div>
+
+        <!-- FAQ -->
+        <h2>Frequently Asked Questions</h2>
+
+        <div class=\"faq-item\">
+            <div class=\"faq-q\">Do I need MTD software if I'm below the VAT registration threshold?</div>
+            <div class=\"faq-a\">If you're not registered for VAT, MTD for VAT doesn't apply to you. But if you're voluntary VAT registered, MTD rules apply. Many small businesses register voluntarily to reclaim input VAT on business expenses &mdash; if that's you, MTD compliance applies.</div>
+        </div>
+
+        <div class=\"faq-item\">
+            <div class=\"faq-q\">Can I use FreeAgent or Xero instead?</div>
+            <div class=\"faq-a\">Yes &mdash; both are MTD-compliant. They're full accounting platforms with more features than FinOwl, but also more complexity. If you have straightforward sole trader or small business bookkeeping needs, simpler MTD software may be all you need. If you have multiple directors, complex VAT schemes, or payroll requirements, a full platform makes more sense.</div>
+        </div>
+
+        <div class=\"faq-item\">
+            <div class=\"faq-q\">What happens if I don't use MTD-compliant software?</div>
+            <div class=\"faq-a\">HMRC can issue penalties for non-compliance. The penalty regime for late VAT returns is points-based, leading to financial penalties and potential VAT deregistration in serious cases. Beyond penalties, you're also at greater risk of VAT errors because manual processes are more prone to mistakes.</div>
+        </div>
+
+        <div class=\"faq-item\">
+            <div class=\"faq-q\">What about MTD for Income Tax (ITSA)?</div>
+            <div class=\"faq-a\">MTD for Income Tax Self Assessment starts 6 April 2026 for sole traders and landlords with qualifying income over &pound;50,000 in 2024/25. It expands to those over &pound;30,000 from April 2027. If you're already MTD-compliant for VAT, you're in a good position &mdash; the same software approach can cover ITSA when the time comes.</div>
+        </div>
+
+        <div class=\"faq-item\">
+            <div class=\"faq-q\">Does FinOwl submit VAT returns directly to HMRC?</div>
+            <div class=\"faq-a\">FinOwl prepares your VAT return figures automatically and is structured for MTD compliance. Check our <a href=\"/#pricing\">pricing page</a> for the specific submission capabilities available on your plan.</div>
+        </div>
+
+        <!-- CTA -->
+        <div class=\"cta-section\">
+            <h2>MTD-Ready Bookkeeping, Without the Spreadsheets</h2>
+            <p>FinOwl connects to your bank and automatically keeps your records in HMRC-compliant digital format. VAT figures ready when you need them.</p>
+            <a href=\"/signup\" class=\"btn-cta\">Start free &mdash; no card needed</a>
+            <p class=\"cta-sub\">Sole Trader plan from &pound;59/month + VAT</p>
+        </div>
+
+        <div class=\"inline-cta\">
+            <a href=\"/\">&#8592; Back to FinOwl homepage</a>
+            <span>Learn more about FinOwl's bookkeeping features</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 FinOwl &middot; <a href=\"/privacy\">Privacy</a> &middot; <a href=\"/terms\">Terms</a> &middot; finowl@polsia.app</p>
+</footer>
+
+</body>
+</html>

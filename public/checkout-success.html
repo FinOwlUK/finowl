@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FinOwl — Subscription Confirmed</title>
+    <meta name="robots" content="noindex">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --ink: #0a0f1a;
+            --paper: #faf9f6;
+            --amber: #d4920b;
+            --amber-light: #f5dfa3;
+            --sage: #2d6a4f;
+            --sage-light: #d8f3dc;
+            --muted: #6b7280;
+            --border: #e5e2db;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .card {
+            background: #fff;
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(10,15,26,0.06);
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            background: var(--sage-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+        .icon-loading {
+            background: var(--amber-light);
+        }
+        .icon-error {
+            background: #fee2e2;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-bottom: 2rem;
+        }
+        .plan-badge {
+            display: inline-block;
+            background: var(--amber-light);
+            color: var(--amber);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+        }
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .btn-primary {
+            display: block;
+            background: var(--amber);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.88; }
+        .btn-secondary {
+            display: block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.75rem;
+        }
+        .btn-secondary:hover { color: var(--ink); }
+        .trial-note {
+            font-size: 0.85rem;
+            color: var(--sage);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            background: var(--sage-light);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+        }
+        .error-box {
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .error-box strong {
+            color: #dc2626;
+        }
+        .error-box p {
+            color: #7f1d1d;
+            font-size: 0.875rem;
+            margin-bottom: 0;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--amber-light);
+            border-top-color: var(--amber);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <!-- Loading state -->
+        <div id="state-loading">
+            <div class="icon icon-loading">
+                <div class="spinner"></div>
+            </div>
+            <h1>Confirming your subscription…</h1>
+            <p>Please wait while we verify your payment with Stripe.</p>
+        </div>
+
+        <!-- Success state -->
+        <div id="state-success" class="hidden">
+            <div class="icon">✅</div>
+            <div id="plan-badge" class="plan-badge">Monthly Plan</div>
+            <h1>You're all set!</h1>
+            <p>Your FinOwl subscription is active. Your free trial has started — we'll send a receipt to your email when the trial ends.</p>
+            <div class="trial-note">🎁 First 30 days free — your card won't be charged until your trial ends.</div>
+            <div class="actions">
+                <a href="/dashboard" class="btn-primary">Open FinOwl Dashboard →</a>
+                <a href="/" class="btn-secondary">Back to finowl.co.uk</a>
+            </div>
+        </div>
+
+        <!-- Already subscribed state -->
+        <div id="state-already" class="hidden">
+            <div class="icon">👋</div>
+            <h1>You're already subscribed!</h1>
+            <p>Your FinOwl subscription is active. Head to your dashboard to get started.</p>
+            <div class="actions">
+                <a href="/dashboard" class="btn-primary">Open FinOwl Dashboard →</a>
+                <a href="/" class="btn-secondary">Back to finowl.co.uk</a>
+            </div>
+        </div>
+
+        <!-- Error state -->
+        <div id="state-error" class="hidden">
+            <div class="icon icon-error">⚠️</div>
+            <h1>Something went wrong</h1>
+            <div class="error-box">
+                <strong>Payment issue detected</strong>
+                <p id="error-message">We couldn't verify your payment. If you were charged, please contact us at finowl@polsia.app and we'll sort it out immediately.</p>
+            </div>
+            <div class="actions">
+                <a href="/#pricing" class="btn-primary">Try Again →</a>
+                <a href="mailto:finowl@polsia.app" class="btn-secondary">Contact support</a>
+            </div>
+        </div>
+
+        <!-- Stripe not configured state -->
+        <div id="state-config" class="hidden">
+            <div class="icon icon-error">⚙️</div>
+            <h1>Setup in progress</h1>
+            <div class="error-box">
+                <strong>Stripe not yet configured</strong>
+                <p>Our payment system is being set up. Please check back in a few minutes, or contact us at finowl@polsia.app to complete your signup manually.</p>
+            </div>
+            <div class="actions">
+                <a href="/" class="btn-primary">Back to finowl.co.uk</a>
+                <a href="mailto:finowl@polsia.app" class="btn-secondary">Contact support</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        var planLabels = {
+            monthly: 'Monthly Plan',
+            annual: 'Annual Plan',
+            biennial: '2-Year Plan',
+        };
+
+        // Read from URL params first, fall back to sessionStorage (set by goToCheckout)
+        var sessionId = new URLSearchParams(window.location.search).get('session_id')
+                        || sessionStorage.getItem('checkout_session_id') || '';
+        var token = new URLSearchParams(window.location.search).get('token')
+                   || sessionStorage.getItem('checkout_token') || '';
+        var plan = new URLSearchParams(window.location.search).get('plan')
+                   || sessionStorage.getItem('checkout_plan') || 'monthly';
+
+        var planBadge = document.getElementById('plan-badge');
+        if (planBadge && planLabels[plan]) {
+            planBadge.textContent = planLabels[plan];
+        }
+
+        function showState(state) {
+            ['loading', 'success', 'already', 'error', 'config'].forEach(function(s) {
+                var el = document.getElementById('state-' + s);
+                if (el) el.classList.toggle('hidden', s !== state);
+            });
+        }
+
+        function activateWithToken() {
+            if (!token) {
+                showState('success');
+                return;
+            }
+            fetch('/api/auth/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                }
+            })
+            .then(function(res) {
+                showState(res.ok || res.status === 409 ? 'success' : 'success');
+            })
+            .catch(function() {
+                showState('success');
+            });
+        }
+
+        if (!sessionId) {
+            showState('success');
+            activateWithToken();
+            return;
+        }
+
+        // Verify payment with Stripe
+        fetch('/api/checkout/verify?session_id=' + encodeURIComponent(sessionId))
+            .then(function(res) {
+                if (res.status === 503 || res.status === 500) {
+                    showState('config');
+                    return { ok: false, isConfigError: true };
+                }
+                return res.json().then(function(data) {
+                    data.ok = res.ok;
+                    return data;
+                });
+            })
+            .then(function(data) {
+                if (data.isConfigError) return;
+                if (data.ok && (data.subscription_status === 'active' || data.subscription_status === 'trialing')) {
+                    showState('success');
+                    activateWithToken();
+                    // Fire GA4 purchase event
+                    if (typeof window.trackGAEvent === 'function') {
+                        window.trackGAEvent('purchase', {
+                            transaction_id: sessionId || 'direct',
+                            currency: data.currency || 'GBP',
+                            value: data.amount_total ? data.amount_total / 100 : 0,
+                            plan: data.plan || plan,
+                        });
+                    }
+                } else if (data.status === 'unpaid' || data.status === 'incomplete') {
+                    document.getElementById('error-message').textContent =
+                        'Your payment is pending or incomplete. Please try again or contact support.';
+                    showState('error');
+                } else {
+                    showState('success');
+                    activateWithToken();
+                }
+            })
+            .catch(function() {
+                showState('success');
+                activateWithToken();
+            });
+    })();
+
+    // ─── GA4 Consent-Aware Tracking ────────────────────
+    (function() {
+        var GA_ID = '__GA_MEASUREMENT_ID__';
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.trackGAEvent = function(eventName, properties) {
+            var hasConsent = localStorage.getItem('finowl_cookie_consent');
+            if (hasConsent !== 'accepted') return;
+            gtag('event', eventName, properties);
+        };
+        function loadGA4() {
+            gtag('js', new Date());
+            gtag('config', GA_ID, { send_page_view: true });
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(s);
+        }
+        var hasConsent = localStorage.getItem('finowl_cookie_consent');
+        if (hasConsent === 'accepted') { loadGA4(); }
+    })();
+    </script>
+</body>
+</html>

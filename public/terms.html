@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — FinOwl</title>
+    <meta name="description" content="FinOwl Terms of Service. Read the terms governing your use of FinOwl, the AI bookkeeping platform for UK small businesses.">
+    <meta name="theme-color" content="#d4920b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FinOwl">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0a0f1a;
+            --paper: #faf9f6;
+            --amber: #d4920b;
+            --amber-light: #f5dfa3;
+            --sage: #2d6a4f;
+            --sage-light: #d8f3dc;
+            --muted: #6b7280;
+            --border: #e5e2db;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-owl {
+            width: 36px;
+            height: 36px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-tag {
+            font-size: 0.75rem;
+            background: var(--amber-light);
+            color: var(--amber);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        /* HERO */
+        .page-hero {
+            background: var(--ink);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .page-hero .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--amber-light);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-hero p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 999px;
+            padding: 0.45rem 1rem;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 1.75rem;
+        }
+
+        /* CONTENT */
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 5rem 2rem 6rem;
+        }
+
+        .toc-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .toc-card h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 2rem;
+        }
+
+        .toc-list a {
+            color: var(--amber);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .toc-list a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .toc-list { grid-template-columns: 1fr; }
+        }
+
+        .sec-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sec-card h2 {
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sec-num {
+            width: 32px;
+            height: 32px;
+            background: var(--amber-light);
+            color: var(--amber);
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .sec-card p {
+            margin-bottom: 1rem;
+            color: #374151;
+            font-size: 0.97rem;
+        }
+
+        .sec-card p:last-child { margin-bottom: 0; }
+
+        .sec-card ul, .sec-card ol {
+            margin: 0.75rem 0 1rem 1.5rem;
+            color: #374151;
+            font-size: 0.97rem;
+        }
+
+        .sec-card li { margin-bottom: 0.5rem; }
+
+        .sec-card h3 {
+            font-size: 1.05rem;
+            margin: 1.5rem 0 0.6rem;
+            color: var(--ink);
+        }
+
+        .highlight-box {
+            background: #fffbf0;
+            border: 1px solid #f0d9a0;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: #7c5a00;
+        }
+
+        .highlight-box strong { color: #5c4000; }
+
+        a { color: var(--amber); }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--amber);
+            text-decoration: none;
+        }
+
+        footer a:hover { text-decoration: underline; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .content { padding: 3rem 1.25rem 4rem; }
+            .sec-card { padding: 1.75rem; }
+            .toc-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-owl">🦉</span>
+            FinOwl
+        </a>
+        <span class="nav-tag">Legal</span>
+    </nav>
+
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <p class="label">Legal</p>
+            <h1>Terms of Service</h1>
+            <p>The rules that govern your use of FinOwl. Plain English where possible; legalese where necessary.</p>
+            <span class="last-updated">Last updated: 14 April 2026</span>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="toc-card">
+            <h3>Contents</h3>
+            <ol class="toc-list">
+                <li><a href="#parties">1. Parties &amp; Agreement</a></li>
+                <li><a href="#service">2. The Service</a></li>
+                <li><a href="#accounts">3. User Accounts</a></li>
+                <li><a href="#subscription">4. Subscription &amp; Billing</a></li>
+                <li><a href="#cancellation">5. Cancellation &amp; Refunds</a></li>
+                <li><a href="#acceptable-use">6. Acceptable Use</a></li>
+                <li><a href="#financial-data">7. Financial Data &amp; Open Banking</a></li>
+                <li><a href="#ip">8. Intellectual Property</a></li>
+                <li><a href="#liability">9. Liability Limitations</a></li>
+                <li><a href="#availability">10. Service Availability</a></li>
+                <li><a href="#termination">11. Account Termination</a></li>
+                <li><a href="#changes">12. Changes to Terms</a></li>
+                <li><a href="#governing-law">13. Governing Law</a></li>
+                <li><a href="#contact">14. Contact</a></li>
+            </ol>
+        </div>
+
+        <!-- 1. PARTIES -->
+        <div class="sec-card" id="parties">
+            <h2><span class="sec-num">1</span> Parties &amp; Agreement</h2>
+            <p>These Terms of Service ("Terms") form a legally binding contract between you ("User", "you") and FinOwl, operated by Polsia Ltd ("FinOwl", "we", "us", "our"), a company registered in England and Wales.</p>
+            <p>By creating an account, completing a subscription payment, or accessing any part of the FinOwl platform at <strong>finowl.co.uk</strong>, you confirm that you have read, understood, and agree to be bound by these Terms and our <a href="/privacy.html">Privacy Policy</a>.</p>
+            <p>If you are entering into these Terms on behalf of a business, you represent that you have authority to bind that business to these Terms.</p>
+            <p>You must be at least 18 years old and a UK resident or operating a UK-based business to use FinOwl.</p>
+        </div>
+
+        <!-- 2. SERVICE -->
+        <div class="sec-card" id="service">
+            <h2><span class="sec-num">2</span> The Service</h2>
+            <p>FinOwl is a cloud-based bookkeeping and financial management platform designed for UK sole traders, freelancers, and small businesses. The service includes:</p>
+            <ul>
+                <li>Automated bank feed import via Open Banking (powered by TrueLayer)</li>
+                <li>AI-powered transaction categorisation using HMRC-compliant UK business categories</li>
+                <li>VAT calculation and reporting, including Making Tax Digital (MTD) preparation</li>
+                <li>Invoice and receipt capture via OCR</li>
+                <li>Financial analytics, reports, and insights</li>
+                <li>HMRC audit trail and compliance tools</li>
+                <li>Accountant access and collaboration features</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>Important:</strong> FinOwl is a bookkeeping and financial record-keeping tool. It is not a regulated financial adviser, accountant, or tax adviser. Nothing on the platform constitutes financial, tax, or legal advice. You remain responsible for the accuracy of your submissions to HMRC and for complying with all applicable tax obligations.
+            </div>
+        </div>
+
+        <!-- 3. ACCOUNTS -->
+        <div class="sec-card" id="accounts">
+            <h2><span class="sec-num">3</span> User Accounts</h2>
+            <h3>Registration</h3>
+            <p>You must provide a valid email address to create an account. FinOwl uses passwordless email authentication — we send a secure login link to your email address each time you sign in.</p>
+            <h3>Account security</h3>
+            <p>You are responsible for maintaining the security of your email account and login links. You must:</p>
+            <ul>
+                <li>Not share login links with unauthorised third parties</li>
+                <li>Notify us immediately at <a href="mailto:finowl@polsia.app">finowl@polsia.app</a> if you suspect unauthorised access to your account</li>
+                <li>Ensure that any accountants or collaborators granted access to your account are authorised by you</li>
+            </ul>
+            <h3>Account information accuracy</h3>
+            <p>You agree to provide accurate, current, and complete information when registering and to keep this information updated. We may suspend accounts where we have reason to believe information provided is false or misleading.</p>
+            <h3>One account per business</h3>
+            <p>Each FinOwl subscription is intended for one legal entity (e.g., one sole trader or one limited company). You must not use a single account to manage the finances of multiple separate businesses without our written consent.</p>
+        </div>
+
+        <!-- 4. SUBSCRIPTION -->
+        <div class="sec-card" id="subscription">
+            <h2><span class="sec-num">4</span> Subscription &amp; Billing</h2>
+            <h3>Pricing</h3>
+            <p>FinOwl is offered on a subscription basis at <strong>£59 per month</strong> (including VAT where applicable) for sole traders and freelancers. Pricing for limited companies will be published separately when that product launches.</p>
+            <h3>Billing cycle</h3>
+            <p>Subscriptions are billed monthly on a recurring basis via Stripe. Your subscription renews automatically on the same calendar day each month unless cancelled before the renewal date.</p>
+            <h3>Payment processing</h3>
+            <p>Payments are processed securely by Stripe, Inc. FinOwl does not store your card details. By subscribing, you also agree to <a href="https://stripe.com/gb/legal" target="_blank">Stripe's Terms of Service</a>.</p>
+            <h3>Pricing changes</h3>
+            <p>We reserve the right to change our pricing. We will give you at least 30 days' written notice (by email) before any price increase takes effect. Continued use of the service after a price change constitutes acceptance of the new pricing.</p>
+            <h3>Taxes</h3>
+            <p>Prices quoted on the website are exclusive of VAT unless otherwise stated. Where VAT applies, it will be added at checkout at the prevailing UK rate.</p>
+        </div>
+
+        <!-- 5. CANCELLATION & REFUNDS -->
+        <div class="sec-card" id="cancellation">
+            <h2><span class="sec-num">5</span> Cancellation &amp; Refunds</h2>
+            <h3>Cancellation</h3>
+            <p>You may cancel your subscription at any time by contacting us at <a href="mailto:finowl@polsia.app">finowl@polsia.app</a> or via the account settings in your dashboard. Cancellation takes effect at the end of the current billing period. You will retain access to the service until that date.</p>
+            <h3>Refund policy</h3>
+            <p>We do not offer refunds for partial months of service. If you cancel mid-cycle, you will continue to have access until your billing period ends — no refund will be issued for unused days.</p>
+            <p>Exceptions may be made at our discretion in the following circumstances:</p>
+            <ul>
+                <li>You have been charged in error due to a technical fault on our part</li>
+                <li>You contact us within 7 days of initial subscription to request a refund and have not made active use of the platform</li>
+                <li>We materially change the service to your significant detriment after you have subscribed</li>
+            </ul>
+            <p>To request a refund, contact us at <a href="mailto:finowl@polsia.app">finowl@polsia.app</a> with your account email and reason for the request.</p>
+            <h3>Data after cancellation</h3>
+            <p>After cancellation, your account and financial data will be retained for 90 days, during which you may request a data export. After 90 days, your data will be deleted in accordance with our <a href="/privacy.html">Privacy Policy</a>.</p>
+        </div>
+
+        <!-- 6. ACCEPTABLE USE -->
+        <div class="sec-card" id="acceptable-use">
+            <h2><span class="sec-num">6</span> Acceptable Use</h2>
+            <p>You agree to use FinOwl only for lawful purposes and in accordance with these Terms. You must not:</p>
+            <ul>
+                <li>Use the service to process financial data for illegal activities, including tax evasion, money laundering, or fraud</li>
+                <li>Attempt to gain unauthorised access to our systems, servers, databases, or other user accounts</li>
+                <li>Reverse engineer, decompile, or attempt to extract source code from the platform</li>
+                <li>Use automated tools (bots, scrapers, crawlers) to access the platform without our express written consent</li>
+                <li>Upload malicious code, viruses, or any software designed to disrupt or damage the platform</li>
+                <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity</li>
+                <li>Resell, sublicense, or commercially exploit the service without our written consent</li>
+                <li>Use the service to process data belonging to individuals or businesses for whom you do not have lawful authority</li>
+            </ul>
+            <p>We reserve the right to investigate and take appropriate action against any violation of this section, including immediate account suspension and reporting to law enforcement where required.</p>
+        </div>
+
+        <!-- 7. FINANCIAL DATA -->
+        <div class="sec-card" id="financial-data">
+            <h2><span class="sec-num">7</span> Financial Data &amp; Open Banking</h2>
+            <h3>Open Banking consent</h3>
+            <p>FinOwl connects to your bank accounts via Open Banking, facilitated by TrueLayer Ltd, an FCA-regulated Account Information Service Provider (AISP). When you connect a bank account, you are granting TrueLayer the right to read your transaction history on your behalf. FinOwl receives read-only access to your transaction data — we cannot initiate payments or transfers.</p>
+            <h3>Your data is yours</h3>
+            <p>All financial data you import into FinOwl remains yours. We process it solely to provide the service described in these Terms. We do not sell your financial data to third parties. See our <a href="/privacy.html">Privacy Policy</a> for full details on how we handle your data.</p>
+            <h3>Accuracy of categorisation</h3>
+            <p>FinOwl uses AI to categorise your transactions. While we strive for accuracy, AI categorisation is not infallible. You are responsible for reviewing and correcting any misclassifications before submitting information to HMRC or your accountant.</p>
+            <h3>HMRC submissions</h3>
+            <p>FinOwl assists you in preparing financial records in a format compatible with HMRC's Making Tax Digital (MTD) requirements. However, submitting tax returns and VAT returns to HMRC remains your legal responsibility. FinOwl is a preparation tool, not an authorised tax agent.</p>
+        </div>
+
+        <!-- 8. IP -->
+        <div class="sec-card" id="ip">
+            <h2><span class="sec-num">8</span> Intellectual Property</h2>
+            <h3>Our platform</h3>
+            <p>FinOwl, its software, design, trademarks, and all associated intellectual property are owned by or licensed to Polsia Ltd. These Terms do not grant you any rights in our intellectual property beyond what is strictly necessary to use the service.</p>
+            <h3>Your data</h3>
+            <p>You retain full ownership of all financial data, documents, and content you upload to FinOwl. You grant us a limited, non-exclusive licence to process, store, and display your data solely for the purpose of providing the service to you.</p>
+            <h3>Feedback</h3>
+            <p>If you submit feedback, suggestions, or ideas about the platform, you grant us a royalty-free, perpetual licence to use that feedback to improve our products and services. We will not identify you as the source without your permission.</p>
+        </div>
+
+        <!-- 9. LIABILITY -->
+        <div class="sec-card" id="liability">
+            <h2><span class="sec-num">9</span> Liability Limitations</h2>
+            <div class="highlight-box">
+                <strong>Summary:</strong> We are not liable for financial losses arising from errors in AI categorisation, your reliance on FinOwl for tax decisions, or service downtime. Our total liability is capped at the fees you paid in the 12 months preceding a claim.
+            </div>
+            <p>To the maximum extent permitted by applicable UK law:</p>
+            <ul>
+                <li><strong>No financial advice liability:</strong> FinOwl is not responsible for financial losses arising from your reliance on information displayed on the platform as financial, tax, or accounting advice.</li>
+                <li><strong>No HMRC penalty liability:</strong> FinOwl is not responsible for penalties, interest, or assessments levied by HMRC arising from your tax submissions, even if prepared using data from FinOwl.</li>
+                <li><strong>No consequential losses:</strong> We exclude liability for indirect, incidental, consequential, or punitive damages, including loss of profits, loss of business, or loss of data.</li>
+                <li><strong>AI accuracy:</strong> We do not warrant that AI categorisation, VAT calculations, or financial insights are error-free. You must review outputs before acting on them.</li>
+                <li><strong>Liability cap:</strong> Our total aggregate liability to you for any claims arising under or in connection with these Terms shall not exceed the total fees paid by you to FinOwl in the 12 months immediately preceding the claim.</li>
+            </ul>
+            <p>Nothing in these Terms limits our liability for: (a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; or (c) any liability that cannot be excluded by UK law.</p>
+            <p>If you are a consumer (not acting in the course of a business), your statutory rights under UK consumer protection law are not affected by these Terms.</p>
+        </div>
+
+        <!-- 10. AVAILABILITY -->
+        <div class="sec-card" id="availability">
+            <h2><span class="sec-num">10</span> Service Availability</h2>
+            <p>We aim to maintain high availability for FinOwl but we do not guarantee uninterrupted service. The platform may be unavailable during:</p>
+            <ul>
+                <li>Scheduled maintenance (we will provide advance notice where possible)</li>
+                <li>Emergency security updates or patches</li>
+                <li>Events outside our reasonable control (force majeure)</li>
+                <li>Failures of third-party services such as Open Banking providers or cloud infrastructure</li>
+            </ul>
+            <p>We target 99.5% monthly uptime. If the service experiences prolonged downtime (more than 72 consecutive hours), you may contact us to discuss a prorated credit at our discretion.</p>
+            <p>We reserve the right to modify, suspend, or discontinue any feature of the platform at any time. For significant changes, we will provide reasonable advance notice by email.</p>
+        </div>
+
+        <!-- 11. TERMINATION -->
+        <div class="sec-card" id="termination">
+            <h2><span class="sec-num">11</span> Account Termination</h2>
+            <h3>Termination by you</h3>
+            <p>You may close your account at any time by contacting <a href="mailto:finowl@polsia.app">finowl@polsia.app</a>. This will cancel your subscription and schedule your data for deletion as described in Section 5.</p>
+            <h3>Termination by us</h3>
+            <p>We may suspend or terminate your account with immediate effect if:</p>
+            <ul>
+                <li>You materially breach these Terms and fail to remedy the breach within 14 days of notice</li>
+                <li>We have reasonable grounds to believe your account is being used for fraudulent, illegal, or abusive activity</li>
+                <li>You provide false information during registration or billing</li>
+                <li>Your subscription payment fails and you do not update payment details within 14 days</li>
+            </ul>
+            <p>If we terminate your account for breach, we are not obligated to issue a refund for any remaining subscription period. If we terminate your account for any other reason (e.g., business discontinuation), we will provide at least 30 days' notice and a prorated refund where applicable.</p>
+            <h3>Effect of termination</h3>
+            <p>On termination, your right to access the platform ceases immediately. Provisions of these Terms that by their nature should survive termination — including liability limitations, governing law, and data retention — will continue to apply.</p>
+        </div>
+
+        <!-- 12. CHANGES -->
+        <div class="sec-card" id="changes">
+            <h2><span class="sec-num">12</span> Changes to These Terms</h2>
+            <p>We may update these Terms from time to time. We will notify you of material changes by email at least 14 days before they take effect.</p>
+            <p>If you continue to use FinOwl after the updated Terms come into effect, you are deemed to have accepted them. If you do not agree to the updated Terms, you must cancel your subscription before the changes take effect.</p>
+            <p>The date at the top of this page reflects when the Terms were last updated. We recommend reviewing these Terms periodically.</p>
+        </div>
+
+        <!-- 13. GOVERNING LAW -->
+        <div class="sec-card" id="governing-law">
+            <h2><span class="sec-num">13</span> Governing Law</h2>
+            <p>These Terms are governed by and construed in accordance with the laws of England and Wales. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+            <p>If you are a consumer based in Scotland or Northern Ireland, you may have additional rights under local law, and local courts may also have jurisdiction over disputes.</p>
+        </div>
+
+        <!-- 14. CONTACT -->
+        <div class="sec-card" id="contact">
+            <h2><span class="sec-num">14</span> Contact</h2>
+            <p>If you have any questions about these Terms, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:finowl@polsia.app">finowl@polsia.app</a></li>
+                <li><strong>Service:</strong> FinOwl, operated by Polsia Ltd</li>
+                <li><strong>Location:</strong> London, United Kingdom</li>
+            </ul>
+            <p>We aim to respond to all legal enquiries within 5 business days.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 FinOwl &middot; Built by <a href="https://polsia.com" target="_blank">Polsia</a> &middot; London, UK</p>
+        <div class="footer-links">
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/cookies.html">Cookie Policy</a>
+            <a href="/security.html">Security &amp; Compliance</a>
+        </div>
+    </footer>
+
+    <script src="/pwa-install.js" defer></script>
+</body>
+</html>

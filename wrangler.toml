@@ -1,0 +1,10 @@
+# FinOwl CDN Worker — Cloudflare Wrangler configuration
+# Deploy: npx wrangler deploy cdn-worker.js
+
+name = "finowl-cdn"
+main = "cdn-worker.js"
+compatibility_date = "2024-01-01"
+
+# Route: cdn.finowl.co.uk/* → CDN Worker
+# Note: This route will be set via Cloudflare dashboard or `wrangler routes set`
+# For manual setup, see DEPLOY_CDN.md

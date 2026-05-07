@@ -1,0 +1,45 @@
+{
+  "name": "FinOwl - AI Bookkeeper for UK Small Businesses",
+  "short_name": "FinOwl",
+  "description": "Automated bookkeeping for UK small businesses. Bank feeds, invoice capture, HMRC MTD, and AI-powered insights.",
+  "start_url": "/dashboard.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#faf9f6",
+  "theme_color": "#d4920b",
+  "categories": ["business", "finance", "productivity"],
+  "lang": "en-GB",
+  "scope": "/",
+  "id": "finowl-app",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your financial dashboard",
+      "url": "/dashboard.html",
+      "icons": [{ "src": "/icons/icon-192.svg", "sizes": "192x192" }]
+    }
+  ]
+}

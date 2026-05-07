@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>FinOwl Maskable Icon</title>
+  <desc>FinOwl - AI Bookkeeper for UK Small Businesses (maskable version)</desc>
+
+  <!-- Full canvas amber background (visible when masked) -->
+  <rect width="512" height="512" fill="#d4920b"/>
+
+  <!-- Owl head - centered within safe zone (80% = ~410px centered) -->
+  <!-- Safe zone: x=51 to x=461, y=51 to y=461 -->
+  <circle cx="256" cy="256" r="200" fill="#0a0f1a"/>
+
+  <!-- Left eye amber ring -->
+  <circle cx="178" cy="236" r="70" fill="#d4920b"/>
+  <!-- Left eye pupil -->
+  <circle cx="178" cy="236" r="44" fill="#0a0f1a"/>
+  <!-- Left eye highlight -->
+  <circle cx="160" cy="218" r="12" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Right eye amber ring -->
+  <circle cx="334" cy="236" r="70" fill="#d4920b"/>
+  <!-- Right eye pupil -->
+  <circle cx="334" cy="236" r="44" fill="#0a0f1a"/>
+  <!-- Right eye highlight -->
+  <circle cx="316" cy="218" r="12" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Beak -->
+  <polygon points="256,286 238,316 274,316" fill="#f5dfa3"/>
+
+  <!-- Ear tufts (just inside safe zone) -->
+  <polygon points="140,132 158,184 110,170" fill="#0a0f1a"/>
+  <polygon points="372,132 354,184 402,170" fill="#0a0f1a"/>
+</svg>

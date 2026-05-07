@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something went wrong — FinOwl</title>
+    <meta name="theme-color" content="#d4920b">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Sentry error tracking on this page too -->
+    <script src="/js/error-tracking.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #faf9f6;
+            color: #0a0f1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #e5e2db;
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(10, 15, 26, 0.06);
+        }
+        .icon {
+            width: 64px;
+            height: 64px;
+            background: #fef2f2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 28px;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #0a0f1a;
+        }
+        p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .btn-primary {
+            background: #0a0f1a;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.15s;
+        }
+        .btn-primary:hover { background: #1a2540; }
+        .btn-secondary {
+            background: transparent;
+            color: #6b7280;
+            border: 1px solid #e5e2db;
+            border-radius: 10px;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .btn-secondary:hover { border-color: #0a0f1a; color: #0a0f1a; }
+        .error-ref {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+        .error-ref code {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            background: #f5f4f1;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+        }
+        @media (max-width: 480px) {
+            .card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">😕</div>
+        <h1>Something went wrong</h1>
+        <p>
+            We ran into an unexpected problem. Your data is safe — nothing was saved or changed.
+        </p>
+        <div class="actions">
+            <a href="/dashboard" class="btn-primary">Back to Dashboard</a>
+            <a href="/" class="btn-secondary">Go to Homepage</a>
+        </div>
+        <p class="error-ref" id="error-ref"></p>
+    </div>
+
+    <script>
+        // Show error reference ID if one was passed in the URL
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var ref = params.get('ref');
+            if (ref) {
+                document.getElementById('error-ref').textContent = 'Reference: ' + ref;
+            }
+        })();
+    </script>
+</body>
+</html>

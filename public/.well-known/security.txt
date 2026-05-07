@@ -1,0 +1,4 @@
+Contact: mailto:finowl@polsia.app
+Preferred-Languages: en
+Expires: 2027-04-24T00:00:00.000Z
+Canonical: https://finowl.co.uk/.well-known/security.txt

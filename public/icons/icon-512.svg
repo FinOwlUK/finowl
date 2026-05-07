@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>FinOwl App Icon</title>
+  <desc>FinOwl - AI Bookkeeper for UK Small Businesses</desc>
+
+  <!-- Outer amber ring / head -->
+  <circle cx="256" cy="256" r="256" fill="#d4920b"/>
+
+  <!-- Owl face (darker inner area) -->
+  <circle cx="256" cy="268" r="198" fill="#0a0f1a"/>
+
+  <!-- Left eye outer ring -->
+  <circle cx="178" cy="236" r="76" fill="#d4920b"/>
+  <!-- Left eye pupil -->
+  <circle cx="178" cy="236" r="48" fill="#0a0f1a"/>
+  <!-- Left eye highlight -->
+  <circle cx="158" cy="216" r="14" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Right eye outer ring -->
+  <circle cx="334" cy="236" r="76" fill="#d4920b"/>
+  <!-- Right eye pupil -->
+  <circle cx="334" cy="236" r="48" fill="#0a0f1a"/>
+  <!-- Right eye highlight -->
+  <circle cx="314" cy="216" r="14" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Beak (triangle pointing down) -->
+  <polygon points="256,290 236,322 276,322" fill="#f5dfa3"/>
+
+  <!-- Left ear tuft -->
+  <polygon points="135,135 156,193 104,176" fill="#d4920b"/>
+  <!-- Right ear tuft -->
+  <polygon points="377,135 356,193 408,176" fill="#d4920b"/>
+
+  <!-- Subtle eyebrow ridge -->
+  <ellipse cx="256" cy="348" rx="96" ry="20" fill="#1a2035"/>
+</svg>

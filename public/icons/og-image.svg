@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf9f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5f0e8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="badge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4920b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e6a820;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Subtle grid lines -->
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#e5e2db" stroke-width="0.5" />
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="#d4920b" />
+
+  <!-- Owl logo circle -->
+  <circle cx="120" cy="180" r="52" fill="#d4920b" />
+  <text x="120" y="197" text-anchor="middle" font-size="40" fill="white">🦉</text>
+
+  <!-- Brand name -->
+  <text x="192" y="165" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="68" fill="#0a0f1a" letter-spacing="-2">FinOwl</text>
+
+  <!-- Tagline -->
+  <text x="192" y="210" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="400" font-size="26" fill="#6b7280">AI Bookkeeper for UK Sole Traders</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="275" x2="1120" y2="275" stroke="#e5e2db" stroke-width="1.5" />
+
+  <!-- Feature pills row -->
+  <!-- Pill 1: MTD Ready -->
+  <rect x="80" y="310" width="220" height="52" rx="26" fill="#d4920b" />
+  <text x="190" y="342" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="20" fill="white">✓ MTD Ready</text>
+
+  <!-- Pill 2: AI Categorisation -->
+  <rect x="320" y="310" width="270" height="52" rx="26" fill="white" stroke="#e5e2db" stroke-width="1.5" />
+  <text x="455" y="342" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="20" fill="#0a0f1a">🤖 AI Categorisation</text>
+
+  <!-- Pill 3: Real-time VAT -->
+  <rect x="610" y="310" width="240" height="52" rx="26" fill="white" stroke="#e5e2db" stroke-width="1.5" />
+  <text x="730" y="342" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="20" fill="#0a0f1a">📊 Real-time VAT</text>
+
+  <!-- Pill 4: Price -->
+  <rect x="870" y="310" width="210" height="52" rx="26" fill="#2d6a4f" />
+  <text x="975" y="342" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="20" fill="white">£79/month</text>
+
+  <!-- Main headline -->
+  <text x="80" y="440" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="42" fill="#0a0f1a">Autonomous bookkeeping that never sleeps.</text>
+
+  <!-- Sub-copy -->
+  <text x="80" y="495" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="400" font-size="26" fill="#6b7280">Bank feeds · Auto-categorise · VAT · Self Assessment · HMRC MTD</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#0a0f1a" />
+  <text x="600" y="616" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" fill="#d4920b" letter-spacing="1">finowl.co.uk</text>
+</svg>

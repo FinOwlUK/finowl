@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security &amp; Compliance — FinOwl</title>
+    <meta name="description" content="How FinOwl protects your financial data. GDPR, Open Banking security, encryption, data retention, and HMRC Making Tax Digital compliance.">
+    <meta name="theme-color" content="#d4920b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FinOwl">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0a0f1a;
+            --paper: #faf9f6;
+            --amber: #d4920b;
+            --amber-light: #f5dfa3;
+            --sage: #2d6a4f;
+            --sage-light: #d8f3dc;
+            --muted: #6b7280;
+            --border: #e5e2db;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-owl {
+            width: 36px;
+            height: 36px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-tag {
+            font-size: 0.75rem;
+            background: var(--sage-light);
+            color: var(--sage);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-weight: 500;
+        }
+
+        /* HERO BANNER */
+        .page-hero {
+            background: var(--ink);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .page-hero .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--amber-light);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.65);
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* TRUST BADGES */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2.5rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 999px;
+            padding: 0.45rem 1rem;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .trust-badge .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #6ee7b7;
+            flex-shrink: 0;
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 5rem 2rem 6rem;
+        }
+
+        /* SECTION CARD */
+        .sec-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sec-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .sec-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .si-amber { background: var(--amber-light); }
+        .si-sage  { background: var(--sage-light); }
+        .si-ink   { background: #e8e6e1; }
+        .si-blue  { background: #dbeafe; }
+        .si-rose  { background: #ffe4e6; }
+
+        .sec-card-header-text h2 {
+            font-size: 1.3rem;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.2rem;
+        }
+
+        .sec-card-header-text .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+        }
+
+        .tag-amber { background: var(--amber-light); color: #92620a; }
+        .tag-sage  { background: var(--sage-light);  color: var(--sage); }
+        .tag-ink   { background: #e8e6e1;             color: #4b5563; }
+        .tag-blue  { background: #dbeafe;             color: #1d4ed8; }
+        .tag-rose  { background: #ffe4e6;             color: #be123c; }
+
+        .sec-card p {
+            font-size: 0.97rem;
+            color: #374151;
+            line-height: 1.72;
+            margin-bottom: 1.1rem;
+        }
+
+        .sec-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* DETAIL LIST */
+        .detail-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .detail-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: #374151;
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        .detail-list .dl-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--sage-light);
+            color: var(--sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-weight: 700;
+        }
+
+        /* TABLE */
+        .retention-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.92rem;
+        }
+
+        .retention-table th {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border);
+            text-align: left;
+        }
+
+        .retention-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: #374151;
+            vertical-align: top;
+        }
+
+        .retention-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .retention-table tr:hover td {
+            background: #fdfcfa;
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: var(--sage-light);
+            border-left: 4px solid var(--sage);
+            border-radius: 0 12px 12px 0;
+            padding: 1.1rem 1.4rem;
+            margin: 1.25rem 0;
+        }
+
+        .highlight-box p {
+            color: #1a3d2b !important;
+            font-size: 0.93rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        .amber-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 1.1rem 1.4rem;
+            margin: 1.25rem 0;
+        }
+
+        .amber-box p {
+            color: #78400d !important;
+            font-size: 0.93rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* CONTACT */
+        .contact-card {
+            background: var(--ink);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 3rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-card p {
+            font-size: 0.97rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            display: inline-block;
+            background: var(--amber);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        .contact-link:hover { opacity: 0.88; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--amber);
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 3.5rem 1.25rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.25rem 4rem;
+            }
+
+            .sec-card {
+                padding: 1.75rem;
+            }
+
+            .trust-bar {
+                gap: 0.5rem;
+            }
+
+            .trust-badge {
+                font-size: 0.78rem;
+            }
+
+            .retention-table {
+                font-size: 0.85rem;
+            }
+
+            .retention-table th,
+            .retention-table td {
+                padding: 0.65rem 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">
+            <div class="logo-owl">🦉</div>
+            FinOwl
+        </a>
+        <div style="display:flex;align-items:center;gap:1rem;">
+            <span class="nav-tag">UK-native AI bookkeeper</span>
+            <a href="/login" style="background:var(--amber);color:#fff;padding:0.5rem 1.25rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Get Started</a>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <div class="label">Security &amp; Compliance</div>
+            <h1>Your financial data is treated with the seriousness it deserves.</h1>
+            <p>FinOwl is built for UK small businesses handling real money. Here is exactly how we protect it.</p>
+
+            <div class="trust-bar">
+                <div class="trust-badge"><span class="dot"></span> GDPR Compliant</div>
+                <div class="trust-badge"><span class="dot"></span> TLS 1.3 Encryption</div>
+                <div class="trust-badge"><span class="dot"></span> FCA-Regulated Open Banking</div>
+                <div class="trust-badge"><span class="dot"></span> HMRC MTD Compatible</div>
+                <div class="trust-badge"><span class="dot"></span> UK Infrastructure</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- GDPR -->
+        <div class="sec-card">
+            <div class="sec-card-header">
+                <div class="sec-icon si-blue">🛡️</div>
+                <div class="sec-card-header-text">
+                    <h2>GDPR Compliance</h2>
+                    <span class="tag tag-blue">UK &amp; EU Data Protection</span>
+                </div>
+            </div>
+
+            <p>FinOwl is fully compliant with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. We process your personal and financial data only for the purposes you have explicitly authorised — providing bookkeeping, VAT, and financial reporting services for your business.</p>
+
+            <ul class="detail-list">
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Lawful basis:</strong> We process your data under the lawful bases of contractual necessity and your explicit consent. We never sell or share your data with third parties for marketing purposes.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Data minimisation:</strong> We collect only the data required to deliver the service — transaction data, categorisation preferences, and VAT configuration. Nothing more.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Data subject rights:</strong> You have the right to access, correct, export, or delete all data FinOwl holds about you and your business at any time. See the Data Retention section below for details.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Data residency:</strong> Your financial data is stored and processed exclusively within UK infrastructure. We do not transfer personal data outside the UK without appropriate safeguards.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Breach notification:</strong> In the event of a data breach affecting your personal data, we will notify you and the ICO within 72 hours in accordance with UK GDPR Article 33.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ENCRYPTION -->
+        <div class="sec-card">
+            <div class="sec-card-header">
+                <div class="sec-icon si-amber">🔐</div>
+                <div class="sec-card-header-text">
+                    <h2>Encryption</h2>
+                    <span class="tag tag-amber">In Transit &amp; At Rest</span>
+                </div>
+            </div>
+
+            <p>All communication between your browser and FinOwl is encrypted using <strong>TLS 1.3</strong> — the strongest version of the transport layer security protocol. There is no unencrypted fallback. Data cannot be read in transit, even on public networks.</p>
+
+            <div class="highlight-box">
+                <p>🔒 <strong>HTTPS everywhere.</strong> All FinOwl pages and APIs are served exclusively over HTTPS. HTTP connections are automatically redirected. HSTS (HTTP Strict Transport Security) is enforced to prevent protocol downgrade attacks.</p>
+            </div>
+
+            <p>All financial data — including transaction records, categorisation history, VAT data, and account configurations — is encrypted <strong>at rest</strong> using AES-256 encryption on our database servers. Sensitive credentials such as Open Banking access tokens are encrypted with an additional application-layer key (AES-256-GCM) before being written to the database, meaning a database compromise alone would not expose your access credentials.</p>
+
+            <ul class="detail-list">
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>TLS 1.3</strong> for all data in transit between your device and FinOwl servers</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>AES-256</strong> encryption for all data stored in our database</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>AES-256-GCM application-layer encryption</strong> for all OAuth tokens and access credentials</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>HSTS headers</strong> enforced on all domains to prevent downgrade attacks</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- OPEN BANKING -->
+        <div class="sec-card">
+            <div class="sec-card-header">
+                <div class="sec-icon si-sage">🏦</div>
+                <div class="sec-card-header-text">
+                    <h2>Open Banking Security</h2>
+                    <span class="tag tag-sage">FCA-Regulated Access</span>
+                </div>
+            </div>
+
+            <p>FinOwl connects to your bank account via <strong>Open Banking</strong> — the UK regulatory framework overseen by the Financial Conduct Authority (FCA). We use regulated Open Banking providers to access your bank feed. We <strong>never</strong> ask for, store, or have access to your online banking password or PIN.</p>
+
+            <div class="highlight-box">
+                <p>🏛️ <strong>Read-only access, always.</strong> Open Banking connections used by FinOwl are strictly read-only. FinOwl can view your transaction history and balances. It cannot initiate payments, move money, or make any changes to your account — by design, not just policy.</p>
+            </div>
+
+            <p>When you connect your bank, you are redirected to authenticate directly with your bank. Your bank credentials are entered on your bank's own secure website — FinOwl never sees them. Your bank then issues a time-limited, read-only access token to FinOwl via the Open Banking standard. This token can be revoked by you at any time through your bank's app.</p>
+
+            <ul class="detail-list">
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>No stored bank credentials.</strong> We never hold your banking username, password, or PIN — not even temporarily.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Read-only permissions.</strong> The OAuth scope granted covers transaction history and balances only. Payment initiation is not requested or permitted.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>FCA-regulated pipeline.</strong> Our Open Banking data providers operate under FCA authorisation as Account Information Service Providers (AISPs).</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Revocable at any time.</strong> You can disconnect your bank feed instantly from within FinOwl or via your bank's Open Banking consent management portal.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Access tokens encrypted.</strong> All Open Banking tokens are encrypted with AES-256-GCM before storage. See Encryption section above.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- DATA RETENTION -->
+        <div class="sec-card">
+            <div class="sec-card-header">
+                <div class="sec-icon si-ink">📁</div>
+                <div class="sec-card-header-text">
+                    <h2>Data Retention &amp; Your Right to Delete</h2>
+                    <span class="tag tag-ink">UK GDPR Compliant</span>
+                </div>
+            </div>
+
+            <p>We retain your data only for as long as it is necessary to provide the service or meet our legal obligations. The table below summarises our retention periods by data category.</p>
+
+            <table class="retention-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Retention Period</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Transaction records</strong></td>
+                        <td>6 years from the end of the relevant tax year</td>
+                        <td>HMRC statutory requirement for business records</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VAT returns &amp; filings</strong></td>
+                        <td>6 years</td>
+                        <td>HMRC VAT Notice 700/21 record-keeping obligations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Account &amp; profile data</strong></td>
+                        <td>Duration of subscription + 30 days post-cancellation</td>
+                        <td>Service delivery and grace period for re-activation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Open Banking tokens</strong></td>
+                        <td>Until revoked or subscription ends</td>
+                        <td>Required for live bank feed connection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Audit logs</strong></td>
+                        <td>6 years</td>
+                        <td>Fraud prevention and dispute resolution</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Support correspondence</strong></td>
+                        <td>3 years</td>
+                        <td>Service continuity and dispute resolution</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="amber-box" style="margin-top:1.5rem;">
+                <p>⚠️ <strong>HMRC obligation note:</strong> UK law requires businesses to retain financial records for a minimum of 6 years. Even if you request account deletion, we are legally required to retain transaction and VAT data for this period. We will delete all other personal data (profile, preferences, bank tokens) immediately upon request.</p>
+            </div>
+
+            <p style="margin-top:1.25rem;"><strong>To exercise your right to deletion or data access,</strong> email <a href="mailto:finowl@polsia.app" style="color:var(--amber);text-decoration:none;font-weight:600;">finowl@polsia.app</a> with the subject line "Data Request". We will respond within 30 days in accordance with UK GDPR Article 12.</p>
+        </div>
+
+        <!-- HMRC COMPLIANCE -->
+        <div class="sec-card">
+            <div class="sec-card-header">
+                <div class="sec-icon si-sage">🏛️</div>
+                <div class="sec-card-header-text">
+                    <h2>HMRC &amp; Making Tax Digital Compliance</h2>
+                    <span class="tag tag-sage">MTD Ready</span>
+                </div>
+            </div>
+
+            <p>FinOwl is purpose-built for UK tax compliance. Our categorisation engine, VAT calculations, and reporting are designed specifically to meet HMRC's <strong>Making Tax Digital (MTD)</strong> requirements — the UK government's mandated shift to digital tax record-keeping and submission.</p>
+
+            <ul class="detail-list">
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>MTD for VAT compatible.</strong> FinOwl produces VAT returns in the format required by HMRC's MTD APIs. Quarterly filings are prepared continuously so there are no last-minute surprises.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Correct UK VAT rates applied.</strong> All 15 HMRC business expense categories are mapped to the correct VAT rate: 20% standard, 0% zero-rated, or VAT-exempt — as defined in VAT Notice 700.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>UK-specific categorisation.</strong> Transaction categories follow HMRC's allowable expense definitions for Sole Traders (SA103) and Limited Companies (CT600), not generic international accounting standards.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Immutable audit trail.</strong> Every categorisation, correction, and user action is logged to an append-only audit log. This provides the complete, tamper-resistant record HMRC requires for compliance reviews.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Digital record-keeping.</strong> All transaction data is maintained in a structured digital format meeting the MTD record-keeping functional compatibility standard.</span>
+                </li>
+            </ul>
+
+            <div class="highlight-box">
+                <p>📋 <strong>MTD for Income Tax (2026+).</strong> FinOwl is being built ahead of the MTD for Income Tax Self Assessment rollout, which becomes mandatory for sole traders and landlords with income over £50,000 from April 2026. FinOwl will support quarterly updates and annual declarations as required.</p>
+            </div>
+        </div>
+
+        <!-- INFRASTRUCTURE -->
+        <div class="sec-card">
+            <div class="sec-card-header">
+                <div class="sec-icon si-rose">⚙️</div>
+                <div class="sec-card-header-text">
+                    <h2>Infrastructure &amp; Operational Security</h2>
+                    <span class="tag tag-rose">Hardened Platform</span>
+                </div>
+            </div>
+
+            <p>FinOwl is hosted on enterprise-grade cloud infrastructure. We follow a defence-in-depth approach — multiple independent security layers so no single failure exposes your data.</p>
+
+            <ul class="detail-list">
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>UK infrastructure.</strong> All servers, databases, and data processing occur within UK data centres. Your data does not leave UK jurisdiction.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Isolated database.</strong> Your financial data is stored in a dedicated PostgreSQL database with network-level isolation. It is not co-mingled with other customer data in shared tables.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Parameterised queries.</strong> Every database interaction uses parameterised SQL statements, eliminating the risk of SQL injection attacks.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>JWT authentication.</strong> Session tokens are short-lived JSON Web Tokens signed with a server-side secret. Tokens expire after 7 days and cannot be forged.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Continuous backups.</strong> The database is backed up continuously with point-in-time recovery capability. Data is never at risk from hardware failure.</span>
+                </li>
+                <li>
+                    <span class="dl-icon">✓</span>
+                    <span><strong>Dependency monitoring.</strong> Third-party packages are regularly audited for known vulnerabilities. Security patches are applied promptly.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact-card">
+            <h3>Security questions? We're direct.</h3>
+            <p>If you have specific questions about how we handle your data, or want to report a potential security issue, reach out directly. We respond within one business day.</p>
+            <a href="mailto:finowl@polsia.app?subject=Security%20Enquiry" class="contact-link">finowl@polsia.app</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 FinOwl &middot; Built by <a href="https://polsia.com" target="_blank">Polsia</a> &middot; London, UK</p>
+        <p style="margin-top:0.4rem; display:flex; justify-content:center; flex-wrap:wrap; gap:0.4rem 1.25rem;">
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/cookies.html">Cookie Policy</a>
+            <a href="/security.html">Security &amp; Compliance</a>
+        </p>
+    </footer>
+
+    <!-- Polsia Analytics -->
+    <script>
+    (function() {
+        var slug = 'finowl';
+        if (!slug) return;
+        var vid = localStorage.getItem('polsia_vid');
+        if (!vid) {
+            vid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0;
+                return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            localStorage.setItem('polsia_vid', vid);
+        }
+        new Image().src = 'https://polsia.com/api/beacon/pixel?s=' + encodeURIComponent(slug) + '&v=' + encodeURIComponent(vid);
+    })();
+    </script>
+<script src="/pwa-install.js" defer></script>
+
+</body>
+</html>

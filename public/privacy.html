@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — FinOwl</title>
+    <meta name="description" content="FinOwl Privacy Policy. GDPR-compliant. How we collect, process, and protect your financial data under UK data protection law.">
+    <meta name="theme-color" content="#d4920b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FinOwl">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0a0f1a;
+            --paper: #faf9f6;
+            --amber: #d4920b;
+            --amber-light: #f5dfa3;
+            --sage: #2d6a4f;
+            --sage-light: #d8f3dc;
+            --muted: #6b7280;
+            --border: #e5e2db;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-owl {
+            width: 36px; height: 36px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-tag {
+            font-size: 0.75rem;
+            background: var(--sage-light);
+            color: var(--sage);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .page-hero {
+            background: var(--ink);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-hero-inner { max-width: 720px; margin: 0 auto; }
+
+        .page-hero .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--amber-light);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.6); }
+
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 999px;
+            padding: 0.45rem 1rem;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 1.75rem;
+        }
+
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 5rem 2rem 6rem;
+        }
+
+        .toc-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .toc-card h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 2rem;
+        }
+
+        .toc-list a { color: var(--amber); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+        .toc-list a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } }
+
+        .sec-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sec-card h2 {
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sec-num {
+            width: 32px; height: 32px;
+            background: var(--sage-light);
+            color: var(--sage);
+            border-radius: 8px;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+        }
+
+        .sec-card p { margin-bottom: 1rem; color: #374151; font-size: 0.97rem; }
+        .sec-card p:last-child { margin-bottom: 0; }
+
+        .sec-card ul, .sec-card ol { margin: 0.75rem 0 1rem 1.5rem; color: #374151; font-size: 0.97rem; }
+        .sec-card li { margin-bottom: 0.5rem; }
+
+        .sec-card h3 { font-size: 1.05rem; margin: 1.5rem 0 0.6rem; color: var(--ink); }
+        .sec-card h3:first-of-type { margin-top: 0.25rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.92rem;
+        }
+
+        .data-table th {
+            background: #f8f7f4;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--ink);
+        }
+
+        .data-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: #374151;
+            vertical-align: top;
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .highlight-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: #166534;
+        }
+
+        .highlight-box strong { color: #14532d; }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .right-item {
+            background: #f8f7f4;
+            border-radius: 12px;
+            padding: 1.1rem 1.25rem;
+        }
+
+        .right-item h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--ink);
+        }
+
+        .right-item p {
+            font-size: 0.84rem;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 600px) {
+            .rights-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 0.6rem 0.75rem; }
+        }
+
+        a { color: var(--amber); }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer a { color: var(--amber); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .content { padding: 3rem 1.25rem 4rem; }
+            .sec-card { padding: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-owl">🦉</span>
+            FinOwl
+        </a>
+        <span class="nav-tag">Legal</span>
+    </nav>
+
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <p class="label">Legal</p>
+            <h1>Privacy Policy</h1>
+            <p>How we collect, use, and protect your personal and financial data. We take this seriously.</p>
+            <span class="last-updated">Last updated: 14 April 2026 &middot; UK GDPR Compliant</span>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="toc-card">
+            <h3>Contents</h3>
+            <ol class="toc-list">
+                <li><a href="#controller">1. Data Controller</a></li>
+                <li><a href="#what-we-collect">2. What We Collect</a></li>
+                <li><a href="#how-we-use">3. How We Use Your Data</a></li>
+                <li><a href="#legal-basis">4. Legal Basis for Processing</a></li>
+                <li><a href="#third-parties">5. Third-Party Processors</a></li>
+                <li><a href="#open-banking">6. Open Banking &amp; TrueLayer</a></li>
+                <li><a href="#hmrc">7. HMRC &amp; Financial Records</a></li>
+                <li><a href="#ai-processing">8. AI Processing</a></li>
+                <li><a href="#retention">9. Data Retention</a></li>
+                <li><a href="#security">10. Security</a></li>
+                <li><a href="#international">11. International Transfers</a></li>
+                <li><a href="#your-rights">12. Your Rights</a></li>
+                <li><a href="#cookies">13. Cookies</a></li>
+                <li><a href="#changes">14. Changes to This Policy</a></li>
+                <li><a href="#contact">15. Contact &amp; ICO</a></li>
+            </ol>
+        </div>
+
+        <!-- 1. DATA CONTROLLER -->
+        <div class="sec-card" id="controller">
+            <h2><span class="sec-num">1</span> Data Controller</h2>
+            <p>FinOwl is operated by <strong>Polsia Ltd</strong>, registered in England and Wales. For the purposes of the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018, Polsia Ltd is the data controller for personal data processed through the FinOwl platform.</p>
+            <p>If you have any questions about this policy or how we handle your data, contact our data team at: <a href="mailto:finowl@polsia.app">finowl@polsia.app</a></p>
+        </div>
+
+        <!-- 2. WHAT WE COLLECT -->
+        <div class="sec-card" id="what-we-collect">
+            <h2><span class="sec-num">2</span> What We Collect</h2>
+            <p>We collect the following categories of personal and financial data:</p>
+
+            <h3>Account information</h3>
+            <ul>
+                <li>Email address (required to create and authenticate your account)</li>
+                <li>Name (optional, used for personalisation)</li>
+                <li>Account creation date and last login timestamp</li>
+                <li>Subscription status and payment history (via Stripe)</li>
+            </ul>
+
+            <h3>Financial data (via Open Banking)</h3>
+            <ul>
+                <li>Bank account details: account name, sort code, account number (masked), balance</li>
+                <li>Transaction history: dates, amounts, descriptions, merchant names, transaction references</li>
+                <li>Transaction categories and VAT classifications applied by our AI</li>
+                <li>Your manual corrections and notes on transactions</li>
+            </ul>
+
+            <h3>Uploaded documents</h3>
+            <ul>
+                <li>Receipts and invoices uploaded for reconciliation (images and PDFs)</li>
+                <li>Extracted data from those documents (amounts, dates, supplier names, VAT amounts)</li>
+            </ul>
+
+            <h3>Usage and technical data</h3>
+            <ul>
+                <li>IP address and approximate location</li>
+                <li>Browser type and version, operating system</li>
+                <li>Pages visited, features used, time on platform</li>
+                <li>Session identifiers and authentication tokens</li>
+                <li>Error logs and diagnostic data</li>
+            </ul>
+
+            <h3>Communications</h3>
+            <ul>
+                <li>Emails you send to our support address</li>
+                <li>Feedback or feature requests you submit</li>
+            </ul>
+        </div>
+
+        <!-- 3. HOW WE USE -->
+        <div class="sec-card" id="how-we-use">
+            <h2><span class="sec-num">3</span> How We Use Your Data</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Purpose</th>
+                        <th>Data Used</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Providing and operating the FinOwl service</td>
+                        <td>Account info, financial data, uploaded documents</td>
+                    </tr>
+                    <tr>
+                        <td>Authenticating your account via email login links</td>
+                        <td>Email address</td>
+                    </tr>
+                    <tr>
+                        <td>AI-powered transaction categorisation using HMRC UK business categories</td>
+                        <td>Transaction descriptions, amounts, merchants</td>
+                    </tr>
+                    <tr>
+                        <td>VAT calculations and MTD preparation</td>
+                        <td>Transaction data, categories, your VAT settings</td>
+                    </tr>
+                    <tr>
+                        <td>Receipt and invoice OCR extraction</td>
+                        <td>Uploaded document images</td>
+                    </tr>
+                    <tr>
+                        <td>HMRC audit trail generation</td>
+                        <td>All financial data changes and actions</td>
+                    </tr>
+                    <tr>
+                        <td>Processing subscription payments</td>
+                        <td>Email address, payment details (handled by Stripe)</td>
+                    </tr>
+                    <tr>
+                        <td>Sending service notifications and account updates</td>
+                        <td>Email address</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics to improve the platform</td>
+                        <td>Anonymised usage data</td>
+                    </tr>
+                    <tr>
+                        <td>Responding to support enquiries</td>
+                        <td>Email and any information you provide</td>
+                    </tr>
+                    <tr>
+                        <td>Fraud prevention and security</td>
+                        <td>IP address, usage patterns</td>
+                    </tr>
+                    <tr>
+                        <td>Complying with legal obligations</td>
+                        <td>Relevant data as required by law</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>We do not sell your data.</strong> We do not sell, rent, or trade your personal or financial data to third parties for marketing purposes — ever.
+            </div>
+        </div>
+
+        <!-- 4. LEGAL BASIS -->
+        <div class="sec-card" id="legal-basis">
+            <h2><span class="sec-num">4</span> Legal Basis for Processing</h2>
+            <p>Under UK GDPR, we process your data on the following legal bases:</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Processing Activity</th>
+                        <th>Legal Basis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Account creation and authentication</td>
+                        <td>Contract performance (Article 6(1)(b))</td>
+                    </tr>
+                    <tr>
+                        <td>Providing bookkeeping and financial tools</td>
+                        <td>Contract performance (Article 6(1)(b))</td>
+                    </tr>
+                    <tr>
+                        <td>Processing financial data for categorisation and VAT</td>
+                        <td>Contract performance (Article 6(1)(b))</td>
+                    </tr>
+                    <tr>
+                        <td>Billing and payment processing</td>
+                        <td>Contract performance (Article 6(1)(b))</td>
+                    </tr>
+                    <tr>
+                        <td>Security monitoring and fraud prevention</td>
+                        <td>Legitimate interests (Article 6(1)(f))</td>
+                    </tr>
+                    <tr>
+                        <td>Platform analytics and improvement</td>
+                        <td>Legitimate interests (Article 6(1)(f))</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing communications (if opted in)</td>
+                        <td>Consent (Article 6(1)(a))</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics cookies (with consent)</td>
+                        <td>Consent (Article 6(1)(a))</td>
+                    </tr>
+                    <tr>
+                        <td>Legal and regulatory compliance</td>
+                        <td>Legal obligation (Article 6(1)(c))</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Where we rely on legitimate interests, we have balanced those interests against your rights and concluded they do not override your interests or fundamental rights.</p>
+        </div>
+
+        <!-- 5. THIRD PARTIES -->
+        <div class="sec-card" id="third-parties">
+            <h2><span class="sec-num">5</span> Third-Party Processors</h2>
+            <p>We share data with the following trusted third-party processors, each bound by data processing agreements in accordance with UK GDPR:</p>
+
+            <h3>Stripe (Payment processing)</h3>
+            <p>We use <strong>Stripe, Inc.</strong> to process subscription payments. Stripe collects your payment card details directly — FinOwl never sees or stores your full card number. Stripe stores your email address, payment method details, and billing history as required to process subscriptions.</p>
+            <p><a href="https://stripe.com/gb/privacy" target="_blank">Stripe Privacy Policy</a></p>
+
+            <h3>TrueLayer (Open Banking)</h3>
+            <p>We use <strong>TrueLayer Ltd</strong>, an FCA-authorised Account Information Service Provider (AISP) (FCA Registration No. 793171), to facilitate Open Banking connections to your bank accounts. TrueLayer retrieves your transaction data on your behalf and transmits it to FinOwl. TrueLayer acts as a separate data controller for the Open Banking consent flow.</p>
+            <p><a href="https://truelayer.com/privacy-policy/" target="_blank">TrueLayer Privacy Policy</a></p>
+
+            <h3>OpenAI (AI transaction categorisation)</h3>
+            <p>Transaction descriptions are processed by <strong>OpenAI, LLC</strong> to power AI-based categorisation. We send transaction description text (not your personal identifiers) to OpenAI's API. OpenAI processes this data under our API agreement, which includes data processing terms prohibiting training on API data by default.</p>
+            <p><a href="https://openai.com/privacy" target="_blank">OpenAI Privacy Policy</a></p>
+
+            <h3>Neon (Database hosting)</h3>
+            <p>Your financial data and account information is stored in a PostgreSQL database hosted by <strong>Neon, Inc.</strong> Data is stored in the EU (Frankfurt region) with encryption at rest.</p>
+
+            <h3>Cloudflare R2 (Document storage)</h3>
+            <p>Receipts and invoices you upload are stored using <strong>Cloudflare's R2</strong> object storage service. Files are stored with access controls limiting retrieval to authenticated users only.</p>
+
+            <h3>Render (Cloud hosting)</h3>
+            <p>FinOwl's application servers are hosted on <strong>Render, Inc.</strong> infrastructure. Application logs and transient data may be processed in Render's data centres.</p>
+
+            <h3>Polsia Analytics (First-party analytics)</h3>
+            <p>We use a privacy-respecting, first-party analytics system operated by Polsia Ltd to understand how users find and use FinOwl. No data is shared with third-party advertising networks.</p>
+        </div>
+
+        <!-- 6. OPEN BANKING -->
+        <div class="sec-card" id="open-banking">
+            <h2><span class="sec-num">6</span> Open Banking &amp; TrueLayer</h2>
+            <p>When you connect a bank account to FinOwl, we use Open Banking infrastructure regulated by the Financial Conduct Authority (FCA). Key points:</p>
+            <ul>
+                <li><strong>Read-only access only:</strong> FinOwl and TrueLayer can only read your transaction data — they cannot initiate payments, move money, or modify your bank account in any way.</li>
+                <li><strong>Your explicit consent:</strong> You must actively authorise the connection in your bank's own app or website. FinOwl never receives your banking username or password.</li>
+                <li><strong>Revocable at any time:</strong> You can revoke Open Banking access at any time either through FinOwl's settings or directly through your bank. Revoking consent stops new data from being imported but does not delete historical data already stored in FinOwl.</li>
+                <li><strong>Consent period:</strong> Open Banking connections typically expire every 90 days, after which you will be prompted to reauthorise.</li>
+                <li><strong>Data scope:</strong> We access account identification details (sort code, account number, account name) and transaction history (dates, amounts, merchant names, references) going back up to 24 months depending on your bank's availability.</li>
+            </ul>
+        </div>
+
+        <!-- 7. HMRC -->
+        <div class="sec-card" id="hmrc">
+            <h2><span class="sec-num">7</span> HMRC &amp; Financial Records</h2>
+            <p>FinOwl processes your financial data to help you maintain records in compliance with HMRC's Making Tax Digital (MTD) requirements. In this context:</p>
+            <ul>
+                <li>We generate and store an immutable audit trail of all financial data changes, as required for HMRC compliance purposes. This audit trail is retained for a minimum of 6 years (the statutory HMRC retention period).</li>
+                <li>We do not share your financial data with HMRC directly unless required to by law (e.g., in response to a valid legal order).</li>
+                <li>You remain responsible for the accuracy and completeness of information submitted to HMRC. FinOwl is a record-keeping aid, not a tax agent.</li>
+                <li>If you export data from FinOwl for HMRC submission, that export represents your data at a point in time and is your responsibility to verify.</li>
+            </ul>
+        </div>
+
+        <!-- 8. AI PROCESSING -->
+        <div class="sec-card" id="ai-processing">
+            <h2><span class="sec-num">8</span> AI Processing of Financial Data</h2>
+            <p>FinOwl uses AI (powered by OpenAI's API) to categorise your bank transactions into HMRC-compliant business categories and to extract data from receipts and invoices.</p>
+            <h3>What data is sent to AI</h3>
+            <ul>
+                <li>Transaction descriptions, amounts, and dates (without your name or account identifiers)</li>
+                <li>Receipt and invoice images (for OCR extraction)</li>
+            </ul>
+            <h3>What we do not send to AI</h3>
+            <ul>
+                <li>Your name, email address, or other personal identifiers</li>
+                <li>Your bank account number or sort code</li>
+                <li>Aggregated balance information</li>
+            </ul>
+            <h3>Automated decision-making</h3>
+            <p>AI categorisation constitutes automated processing that affects how your transactions are classified. This is not a legally significant automated decision — you retain full ability to review and correct every categorisation. We do not use AI to make decisions about your creditworthiness, eligibility for services, or any other significant legal matter.</p>
+            <h3>Right to contest AI decisions</h3>
+            <p>You have the right to contest any AI-generated categorisation and request a manual review. Use the correction tools within the dashboard or contact us at <a href="mailto:finowl@polsia.app">finowl@polsia.app</a>.</p>
+        </div>
+
+        <!-- 9. RETENTION -->
+        <div class="sec-card" id="retention">
+            <h2><span class="sec-num">9</span> Data Retention</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Retention Period</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Account information (email, name)</td>
+                        <td>Duration of account + 90 days post-cancellation</td>
+                        <td>Service provision; data export window</td>
+                    </tr>
+                    <tr>
+                        <td>Financial transaction records</td>
+                        <td>6 years from date of transaction</td>
+                        <td>HMRC statutory requirement</td>
+                    </tr>
+                    <tr>
+                        <td>HMRC audit trail logs</td>
+                        <td>6 years minimum</td>
+                        <td>HMRC statutory requirement</td>
+                    </tr>
+                    <tr>
+                        <td>Uploaded receipts &amp; invoices</td>
+                        <td>6 years from upload date</td>
+                        <td>HMRC statutory requirement</td>
+                    </tr>
+                    <tr>
+                        <td>Subscription and payment records</td>
+                        <td>7 years</td>
+                        <td>Accounting and tax compliance</td>
+                    </tr>
+                    <tr>
+                        <td>Usage analytics (anonymised)</td>
+                        <td>26 months</td>
+                        <td>Product improvement</td>
+                    </tr>
+                    <tr>
+                        <td>Support email correspondence</td>
+                        <td>3 years</td>
+                        <td>Service quality and dispute resolution</td>
+                    </tr>
+                    <tr>
+                        <td>Security and access logs</td>
+                        <td>12 months</td>
+                        <td>Security monitoring and incident response</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>After the applicable retention period, data is securely deleted or anonymised. Note that the 6-year HMRC statutory requirement means we must retain financial records even after account cancellation. You will be informed of this when you cancel your account, and you may request a full data export before deletion.</p>
+        </div>
+
+        <!-- 10. SECURITY -->
+        <div class="sec-card" id="security">
+            <h2><span class="sec-num">10</span> Security</h2>
+            <p>We implement appropriate technical and organisational measures to protect your data:</p>
+            <ul>
+                <li><strong>Encryption in transit:</strong> All data transmitted between your browser and FinOwl is encrypted using TLS 1.2 or higher.</li>
+                <li><strong>Encryption at rest:</strong> Database backups and stored documents are encrypted at rest.</li>
+                <li><strong>Authentication:</strong> Passwordless email login with short-lived tokens. No passwords means no password database to breach.</li>
+                <li><strong>Access controls:</strong> Internal access to production data is restricted to authorised personnel only, with access logs maintained.</li>
+                <li><strong>Parameterised queries:</strong> All database interactions use parameterised SQL to prevent SQL injection attacks.</li>
+                <li><strong>Dependency monitoring:</strong> Third-party packages are audited for known vulnerabilities.</li>
+            </ul>
+            <p>If you discover a security vulnerability in FinOwl, please report it to <a href="mailto:finowl@polsia.app?subject=Security%20Vulnerability">finowl@polsia.app</a>. We take all security reports seriously and aim to respond within one business day.</p>
+            <p>See our full <a href="/security.html">Security &amp; Compliance page</a> for more details.</p>
+        </div>
+
+        <!-- 11. INTERNATIONAL -->
+        <div class="sec-card" id="international">
+            <h2><span class="sec-num">11</span> International Data Transfers</h2>
+            <p>Your data may be processed by third-party providers in countries outside the UK. Where this occurs, we ensure appropriate safeguards are in place:</p>
+            <ul>
+                <li><strong>OpenAI (USA):</strong> Transfers are covered by Standard Contractual Clauses (SCCs) and OpenAI's UK Addendum under UK GDPR Article 46.</li>
+                <li><strong>Stripe (USA):</strong> Transfers are covered by SCCs and Stripe's UK data processing agreement.</li>
+                <li><strong>Render (USA):</strong> Application servers. Transfers are covered by SCCs.</li>
+                <li><strong>Neon (EU — Frankfurt):</strong> Primary database storage remains within the EEA; no additional transfer mechanism required.</li>
+                <li><strong>Cloudflare R2:</strong> Document storage. Cloudflare is bound by SCCs for any non-EEA processing.</li>
+            </ul>
+            <p>You may request a copy of the transfer mechanisms we rely on by contacting <a href="mailto:finowl@polsia.app">finowl@polsia.app</a>.</p>
+        </div>
+
+        <!-- 12. YOUR RIGHTS -->
+        <div class="sec-card" id="your-rights">
+            <h2><span class="sec-num">12</span> Your Rights Under UK GDPR</h2>
+            <p>You have the following rights in respect of your personal data:</p>
+
+            <div class="rights-grid">
+                <div class="right-item">
+                    <h4>Right of access</h4>
+                    <p>Request a copy of all personal data we hold about you.</p>
+                </div>
+                <div class="right-item">
+                    <h4>Right to rectification</h4>
+                    <p>Request correction of inaccurate or incomplete data.</p>
+                </div>
+                <div class="right-item">
+                    <h4>Right to erasure</h4>
+                    <p>Request deletion of your data (subject to legal retention obligations).</p>
+                </div>
+                <div class="right-item">
+                    <h4>Right to portability</h4>
+                    <p>Receive your financial data in a machine-readable format (CSV, JSON).</p>
+                </div>
+                <div class="right-item">
+                    <h4>Right to restriction</h4>
+                    <p>Request that we limit how we process your data in certain circumstances.</p>
+                </div>
+                <div class="right-item">
+                    <h4>Right to object</h4>
+                    <p>Object to processing based on legitimate interests.</p>
+                </div>
+                <div class="right-item">
+                    <h4>Rights re: automated decisions</h4>
+                    <p>Contest AI-generated categorisations and request human review.</p>
+                </div>
+                <div class="right-item">
+                    <h4>Right to withdraw consent</h4>
+                    <p>Withdraw consent for optional processing (e.g., analytics cookies) at any time.</p>
+                </div>
+            </div>
+
+            <p>To exercise any of these rights, contact us at <a href="mailto:finowl@polsia.app">finowl@polsia.app</a> with "Data Rights Request" in the subject line. We will respond within one calendar month as required by UK GDPR.</p>
+            <p>Note that the right to erasure cannot override our legal obligation to retain financial records for HMRC compliance (6 years). In such cases, we will explain what data we are legally required to retain and what we can delete.</p>
+        </div>
+
+        <!-- 13. COOKIES -->
+        <div class="sec-card" id="cookies">
+            <h2><span class="sec-num">13</span> Cookies</h2>
+            <p>We use cookies and similar technologies on the FinOwl platform. A summary is included here; for full details, see our <a href="/cookies.html">Cookie Policy</a>.</p>
+            <p>We use:</p>
+            <ul>
+                <li><strong>Strictly necessary cookies:</strong> For authentication and session management. These cannot be disabled.</li>
+                <li><strong>Analytics cookies:</strong> To understand usage and improve the platform. These are only set with your consent via our cookie banner.</li>
+            </ul>
+            <p>You can manage your cookie preferences at any time via our cookie banner on the landing page.</p>
+        </div>
+
+        <!-- 14. CHANGES -->
+        <div class="sec-card" id="changes">
+            <h2><span class="sec-num">14</span> Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or the features we offer. When we make material changes, we will notify you by email at least 14 days before the changes take effect.</p>
+            <p>The "Last updated" date at the top of this page will always reflect the current version. We encourage you to review this policy periodically.</p>
+        </div>
+
+        <!-- 15. CONTACT -->
+        <div class="sec-card" id="contact">
+            <h2><span class="sec-num">15</span> Contact &amp; ICO</h2>
+            <h3>Contact us</h3>
+            <p>For any questions about this Privacy Policy or to exercise your data rights:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:finowl@polsia.app">finowl@polsia.app</a></li>
+                <li><strong>Subject line:</strong> "Privacy Enquiry" or "Data Rights Request"</li>
+                <li><strong>Response time:</strong> Within 5 business days for general enquiries; within one calendar month for formal data rights requests</li>
+            </ul>
+            <h3>Information Commissioner's Office (ICO)</h3>
+            <p>If you are not satisfied with how we handle your data or your rights request, you have the right to lodge a complaint with the UK's supervisory authority:</p>
+            <ul>
+                <li><strong>ICO Website:</strong> <a href="https://ico.org.uk" target="_blank">ico.org.uk</a></li>
+                <li><strong>ICO Helpline:</strong> 0303 123 1113</li>
+                <li><strong>ICO Address:</strong> Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF</li>
+            </ul>
+            <p>We would appreciate the opportunity to resolve your concern directly before you contact the ICO, but this does not affect your statutory right to complain at any time.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 FinOwl &middot; Built by <a href="https://polsia.com" target="_blank">Polsia</a> &middot; London, UK</p>
+        <div class="footer-links">
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/cookies.html">Cookie Policy</a>
+            <a href="/security.html">Security &amp; Compliance</a>
+        </div>
+    </footer>
+
+    <script src="/pwa-install.js" defer></script>
+</body>
+</html>

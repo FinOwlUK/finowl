@@ -1,0 +1,10 @@
+services:
+  - type: web
+    runtime: node
+    name: app
+    buildCommand: npm install
+    startCommand: node --enable-source-maps node_modules/.bin/migrate && node --enable-source-maps server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - FinOwl</title>
+    <meta name="theme-color" content="#d4920b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FinOwl">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --ink: #0a0f1a;
+            --paper: #faf9f6;
+            --amber: #d4920b;
+            --amber-light: #f5dfa3;
+            --sage: #2d6a4f;
+            --sage-light: #d8f3dc;
+            --muted: #6b7280;
+            --border: #e5e2db;
+            --red: #dc2626;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+
+        .auth-container {
+            width: 100%;
+            max-width: 420px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            text-decoration: none;
+            color: var(--ink);
+        }
+        .logo-owl {
+            width: 44px;
+            height: 44px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        .auth-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+        .auth-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .auth-card .subtitle {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .form-group input:focus {
+            border-color: var(--amber);
+        }
+        .form-group input.error {
+            border-color: var(--red);
+        }
+        .field-hint {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: 0.35rem;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--amber);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            margin-top: 0.5rem;
+        }
+        .btn-primary:hover { opacity: 0.88; }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .alert {
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            font-size: 0.875rem;
+            margin-bottom: 1.25rem;
+            display: none;
+        }
+        .alert-error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: var(--red);
+        }
+        .alert-success {
+            background: var(--sage-light);
+            border: 1px solid #2d6a4f40;
+            color: var(--sage);
+            font-weight: 500;
+        }
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .auth-footer a {
+            color: var(--amber);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .auth-footer a:hover { text-decoration: underline; }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .back-link:hover { color: var(--ink); }
+
+        /* Password strength indicator */
+        .pw-strength {
+            margin-top: 0.4rem;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--border);
+            overflow: hidden;
+            display: none;
+        }
+        .pw-strength-bar {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.3s, background 0.3s;
+            width: 0;
+        }
+    </style>
+    <!-- Sentry client-side error tracking -->
+    <script src="/js/error-tracking.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <a href="/" class="logo">
+            <div class="logo-owl">🦉</div>
+            <span class="logo-text">FinOwl</span>
+        </a>
+
+        <div class="auth-card">
+            <h2>Create your account</h2>
+            <p class="subtitle">Financial clarity for your business. Free to start.</p>
+
+            <div class="alert alert-error" id="errorMsg"></div>
+            <div class="alert alert-success" id="successMsg"></div>
+
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="you@business.co.uk" required autocomplete="email" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="At least 8 characters" required autocomplete="new-password">
+                    <div class="pw-strength" id="pwStrength">
+                        <div class="pw-strength-bar" id="pwStrengthBar"></div>
+                    </div>
+                    <div class="field-hint" id="pwHint">At least 8 characters</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input type="password" id="confirmPassword" placeholder="Repeat your password" required autocomplete="new-password">
+                </div>
+                <button type="submit" class="btn-primary" id="submitBtn">Create account</button>
+            </form>
+        </div>
+
+        <div class="auth-footer">
+            Already have an account? <a href="/login">Log in</a>
+        </div>
+        <a href="/" class="back-link">&larr; Back to FinOwl</a>
+    </div>
+
+    <script>
+    const form = document.getElementById('signupForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmInput = document.getElementById('confirmPassword');
+    const submitBtn = document.getElementById('submitBtn');
+    const errorMsg = document.getElementById('errorMsg');
+    const successMsg = document.getElementById('successMsg');
+    const pwStrength = document.getElementById('pwStrength');
+    const pwStrengthBar = document.getElementById('pwStrengthBar');
+    const pwHint = document.getElementById('pwHint');
+
+    // Check if already logged in
+    if (localStorage.getItem('finowl_token')) {
+        window.location.href = '/dashboard';
+    }
+
+    // Password strength meter
+    passwordInput.addEventListener('input', () => {
+        const val = passwordInput.value;
+        pwStrength.style.display = val.length > 0 ? 'block' : 'none';
+
+        let score = 0;
+        if (val.length >= 8) score++;
+        if (val.length >= 12) score++;
+        if (/[A-Z]/.test(val)) score++;
+        if (/[0-9]/.test(val)) score++;
+        if (/[^A-Za-z0-9]/.test(val)) score++;
+
+        const widths = ['0%','25%','45%','65%','85%','100%'];
+        const colors = ['#dc2626','#ea580c','#d4920b','#16a34a','#16a34a'];
+        const labels = ['Too short','Weak','Fair','Good','Strong'];
+
+        pwStrengthBar.style.width = widths[score] || '0%';
+        pwStrengthBar.style.background = colors[Math.max(0, score - 1)] || '#dc2626';
+        if (val.length > 0 && score === 0) {
+            pwHint.textContent = 'Too short (min 8 characters)';
+            pwHint.style.color = '#dc2626';
+        } else if (val.length > 0) {
+            pwHint.textContent = (labels[score - 1] || 'Weak') + ' password';
+            pwHint.style.color = colors[Math.max(0, score - 1)] || '#dc2626';
+        } else {
+            pwHint.textContent = 'At least 8 characters';
+            pwHint.style.color = '#6b7280';
+        }
+    });
+
+    function showError(msg) {
+        errorMsg.textContent = msg;
+        errorMsg.style.display = 'block';
+        successMsg.style.display = 'none';
+    }
+
+    function showSuccess(msg) {
+        successMsg.innerHTML = '✅ ' + msg;
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+        form.style.display = 'none';
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorMsg.style.display = 'none';
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+        const confirmPassword = confirmInput.value;
+
+        if (password.length < 8) {
+            return showError('Password must be at least 8 characters');
+        }
+        if (password !== confirmPassword) {
+            return showError('Passwords do not match');
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Creating account…';
+
+        try {
+            const res = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password, confirmPassword })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || 'Registration failed');
+            }
+
+            showSuccess(data.message || 'Account created! Check your email for a verification link.');
+            // Fire GA4 sign_up event (consent-aware)
+            if (typeof window.trackGAEvent === 'function') {
+                window.trackGAEvent('sign_up', { method: 'email' });
+            }
+        } catch (err) {
+            showError(err.message);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Create account';
+        }
+    });
+
+    // ─── GA4 Consent-Aware Tracking ────────────────────
+    (function() {
+        var GA_ID = '__GA_MEASUREMENT_ID__';
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.trackGAEvent = function(eventName, properties) {
+            var hasConsent = localStorage.getItem('finowl_cookie_consent');
+            if (hasConsent !== 'accepted') return;
+            gtag('event', eventName, properties);
+        };
+        function loadGA4() {
+            gtag('js', new Date());
+            gtag('config', GA_ID, { send_page_view: true });
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(s);
+        }
+        var hasConsent = localStorage.getItem('finowl_cookie_consent');
+        if (hasConsent === 'accepted') { loadGA4(); }
+        // Also load if no consent record (banner will show on landing page,
+        // but on signup page we just load GA4 — cookie consent already given on landing page)
+        // Only load GA4 if user previously accepted analytics cookies
+    })();
+    </script>
+<script src="/pwa-install.js" defer></script>
+</body>
+</html>

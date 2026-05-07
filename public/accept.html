@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accept Invite — FinOwl</title>
+    <meta name="theme-color" content="#d4920b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FinOwl">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f5f4f1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+        .logo-owl {
+            width: 40px; height: 40px;
+            background: #d4920b;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #0a0f1a;
+        }
+        .icon-circle {
+            width: 64px; height: 64px;
+            background: #f0fdf4;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.25rem;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0a0f1a;
+            margin-bottom: 0.6rem;
+        }
+        .subtitle {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.75rem;
+        }
+        .owner-pill {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.85rem;
+            background: #d4920b;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn:hover { background: #b87d0a; }
+        .btn:disabled { background: #9ca3af; cursor: not-allowed; }
+        .status {
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            min-height: 1.4rem;
+        }
+        .status.error { color: #dc2626; }
+        .status.success { color: #2d6a4f; }
+        .status.loading { color: #6b7280; }
+        .read-only-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 0.5rem 0.875rem;
+            font-size: 0.83rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <div class="logo-owl">🦉</div>
+            <span class="logo-text">FinOwl</span>
+        </div>
+
+        <div id="loadingState">
+            <div class="icon-circle">⏳</div>
+            <h1>Verifying invite…</h1>
+            <p class="subtitle">Please wait while we verify your invite link.</p>
+        </div>
+
+        <div id="readyState" style="display:none">
+            <div class="icon-circle">📊</div>
+            <h1>You've been invited</h1>
+            <p class="subtitle" id="inviteDesc">View read-only access to their FinOwl account — including transactions, reports, and VAT summaries.</p>
+            <div class="owner-pill" id="ownerPill">from — FinOwl</div>
+            <div class="read-only-badge">
+                👁️ Read-only access — you cannot edit any data
+            </div>
+            <button class="btn" id="acceptBtn" onclick="acceptInvite()">Accept &amp; View Books</button>
+            <div class="status loading" id="statusMsg"></div>
+        </div>
+
+        <div id="errorState" style="display:none">
+            <div class="icon-circle">❌</div>
+            <h1>Invite not found</h1>
+            <p class="subtitle">This invite link may have expired or already been used. Ask your accountant client to send a new invite.</p>
+            <a href="/login" style="display:inline-block;margin-top:1rem;color:#d4920b;font-weight:600;text-decoration:none">Go to FinOwl →</a>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const inviteToken = params.get('token');
+
+        // Auto-load invite info on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!inviteToken) {
+                showError();
+                return;
+            }
+            // Validate token without consuming it — just try accepting
+            // We'll show the "ready" state immediately (token will be consumed on accept click)
+            showReady();
+        });
+
+        function showReady() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('readyState').style.display = 'block';
+        }
+
+        function showError() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('errorState').style.display = 'block';
+        }
+
+        async function acceptInvite() {
+            const btn = document.getElementById('acceptBtn');
+            const statusMsg = document.getElementById('statusMsg');
+            btn.disabled = true;
+            btn.textContent = 'Accepting…';
+            statusMsg.textContent = '';
+            statusMsg.className = 'status loading';
+
+            try {
+                const res = await fetch(`/api/team/accept?token=${encodeURIComponent(inviteToken)}`);
+                const data = await res.json();
+
+                if (!res.ok) {
+                    statusMsg.textContent = data.error || 'Failed to accept invite';
+                    statusMsg.className = 'status error';
+                    btn.disabled = false;
+                    btn.textContent = 'Try Again';
+                    return;
+                }
+
+                // Update owner pill with real info
+                const ownerEmail = data.user.ownerEmail || '';
+                if (ownerEmail) {
+                    document.getElementById('ownerPill').textContent = `Invited by ${ownerEmail}`;
+                    document.getElementById('inviteDesc').textContent = `You have read-only access to ${ownerEmail}'s FinOwl account — transactions, reports, and VAT summaries.`;
+                }
+
+                statusMsg.textContent = '✓ Accepted! Redirecting to dashboard…';
+                statusMsg.className = 'status success';
+
+                // Store credentials
+                localStorage.setItem('finowl_token', data.token);
+                localStorage.setItem('finowl_user', JSON.stringify(data.user));
+
+                // Redirect to dashboard
+                setTimeout(() => {
+                    window.location.href = '/dashboard';
+                }, 800);
+
+            } catch (err) {
+                statusMsg.textContent = 'Something went wrong — please try again';
+                statusMsg.className = 'status error';
+                btn.disabled = false;
+                btn.textContent = 'Accept & View Books';
+            }
+        }
+    </script>
+<script src="/pwa-install.js" defer></script>
+</body>
+</html>
