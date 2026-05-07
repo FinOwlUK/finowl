@@ -18,6 +18,9 @@ const { sendInvoiceEmail, sendInviteEmail, sendEmail, sendAuthEmail, sendWelcome
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.get('/healthz', (req, res) => {
+  res.status(200).send('ok');
+});
 const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID || 'G-0CKFPZFEPR';
 
 // ─── Custom Domain Redirect ─────────────────────────────
@@ -9042,7 +9045,7 @@ app.use((err, req, res, next) => {
 // Render terminates TLS at its load balancer and serves HTTP/2 to clients
 // automatically. The app runs plain HTTP/1.1 behind the proxy — this is the
 // correct architecture. No application-level HTTP/2 or TLS config needed.
-app.listen(port, () => {
+app.listen(port, () => 
   console.log(`FinOwl server running on port ${port}`);
   // Log Stripe configuration status at startup
   if (process.env.STRIPE_SECRET_KEY) {
@@ -9059,5 +9062,5 @@ app.listen(port, () => {
   // Run recurring invoice processor at startup to catch any missed schedules
   processRecurringInvoices().catch(err =>
     console.error('[RecurringInvoices] Startup run failed:', err)
-  );
+  )
 });
