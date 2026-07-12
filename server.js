@@ -8260,14 +8260,14 @@ app.get('/api/transactions/duplicates', authenticateToken, async (req, res) => {
          t1.description    AS tx1_description,
          t1.merchant_name  AS tx1_merchant,
          t1.reference      AS tx1_reference,
-         bc1.display_name  AS tx1_bank,
+         bc1.bank_name AS tx1_bank,
          t2.id             AS tx2_id,
          t2.date           AS tx2_date,
          t2.amount         AS tx2_amount,
          t2.description    AS tx2_description,
          t2.merchant_name  AS tx2_merchant,
          t2.reference      AS tx2_reference,
-         bc2.display_name  AS tx2_bank
+         bc2.bank_name AS tx2_bank
        FROM duplicate_pairs dp
        JOIN transactions t1 ON dp.transaction_id_1 = t1.id
        JOIN transactions t2 ON dp.transaction_id_2 = t2.id
