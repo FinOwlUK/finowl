@@ -1340,7 +1340,9 @@ async function syncBankConnection(conn) {
 
   try {
     // Fetch transactions for the last 90 days
-    const toDate = new Date().toISOString().substring(0, 10);
+    const toDate = new Date(Date.now() - 24 * 60 * 60 * 1000)
+  .toISOString()
+  .substring(0, 10);
     const fromDate = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString().substring(0, 10);
 
     const tlTxs = await tlGetTransactions(accessToken, conn.truelayer_account_id, fromDate, toDate);
