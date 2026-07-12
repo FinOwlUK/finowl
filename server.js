@@ -8208,7 +8208,7 @@ app.get('/api/transactions/duplicates', authenticateToken, async (req, res) => {
 
     // Full scan: fetch all non-duplicate transactions from the last 90 days
     const txRes = await pool.query(
-      `SELECT id, date, amount, description, merchant_name
+      SELECT id, date, amount, description, merchant_name, bank_connection_id
        FROM transactions
        WHERE user_id = $1
          AND date >= NOW() - INTERVAL '90 days'
@@ -8223,6 +8223,7 @@ app.get('/api/transactions/duplicates', authenticateToken, async (req, res) => {
       for (let j = i + 1; j < txns.length; j++) {
         const a = txns[i];
         const b = txns[j];
+        if (a.bank_connection_id !== b.bank_connection_id) continue;
         if (Math.abs(parseFloat(a.amount) - parseFloat(b.amount)) >= 0.01) continue;
 
         const daysDiff    = Math.abs(new Date(a.date) - new Date(b.date)) / 86400000;
