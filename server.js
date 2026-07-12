@@ -8217,7 +8217,7 @@ app.get('/api/transactions/duplicates', authenticateToken, async (req, res) => {
       [userId]
     );
     const txns = txRes.rows;
-console.log(txns[0]);
+
     // O(n²) comparison — bounded by 90-day window (typically < 500 transactions)
     for (let i = 0; i < txns.length; i++) {
       for (let j = i + 1; j < txns.length; j++) {
