@@ -1222,11 +1222,11 @@ async function tlGetAccountInfo(accessToken, accountId) {
 
 // Fetch transactions for an account
 async function tlGetTransactions(accessToken, accountId, fromDate, toDate) {
-  const qs = `?from=${fromDate}T00:00:00&to=${toDate}T23:59:59`;
+  const qs = `?from=${fromDate}T00:00:00Z&to=${toDate}T23:59:59Z`;
   const res = await tlRequest(TRUELAYER_API_HOST, `/data/v1/accounts/${accountId}/transactions${qs}`, 'GET', {
     'Authorization': `Bearer ${accessToken}`
   });
-  if (res.status !== 200) throw new Error(`TrueLayer transactions failed: ${res.status}`);
+  if (res.status !== 200) throw new Error(`TrueLayer transactions failed: ${res.status} — ${JSON.stringify(res.body)}`);
   return res.body.results || [];
 }
 
