@@ -1366,7 +1366,7 @@ async function syncBankConnection(conn) {
             original_currency, original_amount, exchange_rate, exchange_rate_date)
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
          RETURNING id`,
-        [tx.userId, tx.bankConnectionId, tx.date, tx.description, tx.amount, tx.merchantName, tx.reference,
+        [tx.userId, tx.bankConnectionId, tx.date, tx.description, tx.amount, tx.merchantName, extId || tx.reference,
          tx.originalCurrency, tx.originalAmount, tx.exchangeRate, tx.exchangeRateDate]
       );
       imported++;
