@@ -8235,7 +8235,7 @@ app.get('/api/transactions/duplicates', authenticateToken, async (req, res) => {
           b.merchant_name || b.description || ''
         );
         const confidence = Math.round((0.4 + 0.3 * dateScore + 0.3 * vendorScore) * 1000) / 1000;
-        if (confidence >= 0.7) {
+        if (confidence >= 0.8) {
           const id1 = Math.min(a.id, b.id);
           const id2 = Math.max(a.id, b.id);
           await pool.query(
