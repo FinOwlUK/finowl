@@ -3254,7 +3254,7 @@ async function detectAndFlagDuplicates(userId, transactionId) {
       );
       // Amount always matches (within £0.01 → score 1.0)
       const confidence = Math.round((0.4 + 0.3 * dateScore + 0.3 * vendorScore) * 1000) / 1000;
-      if (confidence >= 0.7) {
+      if (confidence >= 0.8) {
         const id1 = Math.min(transactionId, cand.id);
         const id2 = Math.max(transactionId, cand.id);
         await pool.query(
