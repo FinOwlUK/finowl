@@ -33,29 +33,29 @@ function getStripe() {
  * Plan definitions — all prices in pence (GBP).
  *
  * Pricing:
- *   Sole Trader:  £59/mo  |  £649/yr  |  £1,298/2yr
+ *   Sole Trader:  £20/mo  |  £220/yr  |  £440/2yr
  *   Dormant:      £15/mo  |  £165/yr  |  £330/2yr
- *   Limited:      £89/mo  |  £979/yr  |  £1,958/2yr
+ *   Limited:      £29/mo  |  £319/yr  |  £638/2yr
  */
 const PLANS = {
   // ── Sole Trader ──────────────────────────
   monthly: {
     name: 'FinOwl — Sole Trader Monthly',
-    amount: 5900,
+    amount: 2000,
     interval: 'month',
     interval_count: 1,
     trial_days: 30,
   },
   annual: {
     name: 'FinOwl — Sole Trader Annual',
-    amount: 64900,
+    amount: 22000,
     interval: 'year',
     interval_count: 1,
     trial_days: 30,
   },
   biennial: {
     name: 'FinOwl — Sole Trader 2-Year',
-    amount: 129800,
+    amount: 44000,
     interval: 'year',
     interval_count: 2,
     trial_days: 30,
@@ -87,21 +87,21 @@ const PLANS = {
   // ── Limited Company ──────────────────────
   'ltd-monthly': {
     name: 'FinOwl — Limited Company Monthly',
-    amount: 8900,
+    amount: 2900,
     interval: 'month',
     interval_count: 1,
     trial_days: 30,
   },
   'ltd-annual': {
     name: 'FinOwl — Limited Company Annual',
-    amount: 97900,
+    amount: 31900,
     interval: 'year',
     interval_count: 1,
     trial_days: 30,
   },
   'ltd-biennial': {
     name: 'FinOwl — Limited Company 2-Year',
-    amount: 195800,
+    amount: 63800,
     interval: 'year',
     interval_count: 2,
     trial_days: 30,
