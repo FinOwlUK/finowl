@@ -37,6 +37,13 @@ function getStripe() {
  *   Dormant:      £15/mo  |  £165/yr  |  £330/2yr
  *   Limited:      £29/mo  |  £319/yr  |  £638/2yr
  */
+
+const FIRST_MONTH_COUPONS = {
+  monthly: 'RByf704o',
+  'ltd-monthly': 'hLBRayHL',
+  'dormant-monthly': 'xO6cmceo',
+};
+
 const PLANS = {
   // ── Sole Trader ──────────────────────────
   monthly: {
