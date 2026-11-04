@@ -295,15 +295,19 @@
                     document.getElementById('error-message').textContent =
                         'Your payment is pending or incomplete. Please try again or contact support.';
                     showState('error');
-                } else {
-                    showState('success');
-                    activateWithToken();
-                }
-            })
-            .catch(function() {
-                showState('success');
-                activateWithToken();
-            });
+               
+} else {
+    document.getElementById('error-message').textContent =
+        'We could not confirm your subscription. Please contact support.';
+    showState('error');
+}
+})
+.catch(function() {
+    document.getElementById('error-message').textContent =
+        'Unable to verify your payment. Please try again later.';
+    showState('error');
+});
+
     })();
 
     // ─── GA4 Consent-Aware Tracking ────────────────────
