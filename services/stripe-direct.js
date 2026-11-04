@@ -184,15 +184,17 @@ async function createCheckoutSession(planKey, customerEmail, authToken) {
     payment_method_types: ['card'],
     line_items: [{ price: priceId, quantity: 1 }],
     subscription_data: {
-      trial_period_days: plan.trial_days,
       metadata: { plan: planKey },
     },
     success_url: `${appUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}&plan=${planKey}&token=${authToken || ''}`,
     cancel_url: `${appUrl}/#pricing`,
-    allow_promotion_codes: true,
     billing_address_collection: 'required',
   };
+const firstMonthCoupon = FIRST_MONTH_COUPONS[planKey];
 
+if (firstMonthCoupon) {
+  sessionParams.discounts = [{ coupon: firstMonthCoupon }];
+}
   if (customerEmail) {
     sessionParams.customer_email = customerEmail;
   }
