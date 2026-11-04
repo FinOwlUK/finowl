@@ -51,21 +51,18 @@ const PLANS = {
     amount: 2000,
     interval: 'month',
     interval_count: 1,
-    trial_days: 30,
   },
   annual: {
     name: 'FinOwl — Sole Trader Annual',
     amount: 22000,
     interval: 'year',
     interval_count: 1,
-    trial_days: 30,
   },
   biennial: {
     name: 'FinOwl — Sole Trader 2-Year',
     amount: 44000,
     interval: 'year',
     interval_count: 2,
-    trial_days: 30,
   },
 
   // ── Dormant Business ─────────────────────
@@ -74,21 +71,18 @@ const PLANS = {
     amount: 1500,
     interval: 'month',
     interval_count: 1,
-    trial_days: 30,
   },
   'dormant-annual': {
     name: 'FinOwl — Dormant Business Annual',
     amount: 16500,
     interval: 'year',
     interval_count: 1,
-    trial_days: 30,
   },
   'dormant-biennial': {
     name: 'FinOwl — Dormant Business 2-Year',
     amount: 33000,
     interval: 'year',
     interval_count: 2,
-    trial_days: 30,
   },
 
   // ── Limited Company ──────────────────────
@@ -97,21 +91,18 @@ const PLANS = {
     amount: 2900,
     interval: 'month',
     interval_count: 1,
-    trial_days: 30,
   },
   'ltd-annual': {
     name: 'FinOwl — Limited Company Annual',
     amount: 31900,
     interval: 'year',
     interval_count: 1,
-    trial_days: 30,
   },
   'ltd-biennial': {
     name: 'FinOwl — Limited Company 2-Year',
     amount: 63800,
     interval: 'year',
     interval_count: 2,
-    trial_days: 30,
   },
 };
 
