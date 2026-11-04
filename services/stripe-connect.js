@@ -191,7 +191,7 @@ async function createCheckoutSession(planKey, customerEmail, authToken) {
       // Stripe Connect: transfer the charge to the connected account
       transfer_data: { destination: connectedAccountId },
     },
-    success_url: `${appUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}&plan=${planKey}&token=${authToken || ''}`,
+    success_url: `${appUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}&plan=${planKey}`,
     cancel_url: `${appUrl}/#pricing`,
     allow_promotion_codes: true,
     billing_address_collection: 'required',
