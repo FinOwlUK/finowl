@@ -2486,15 +2486,21 @@
                 // Server created a GBP checkout session — redirect there
                 window.location.href = result.data.url;
             } else {
-                // Server returned an error — fall back to static link
-                console.warn('[checkout] Server-side session failed, falling back to static link:', result.data.error);
-                fallbackToStaticLink(plan, token, btn, originalText);
+                // Server returned an error — show payment unavailable message
+                console.warn('[checkout] Server-side session failed:', result.data.error);
+                alert('Payment is temporarily unavailable. Please try again later.');
+btn.textContent = originalText;
+btn.classList.remove('loading');
+btn.disabled = false;
             }
         })
         .catch(function(err) {
-            // Network error — fall back to static link
-            console.warn('[checkout] Server unreachable, falling back to static link:', err);
-            fallbackToStaticLink(plan, token, btn, originalText);
+            // Network error — show payment unavailable message
+            console.warn('[checkout] Server unreachable:', err);
+           alert('Payment is temporarily unavailable. Please try again later.');
+btn.textContent = originalText;
+btn.classList.remove('loading');
+btn.disabled = false;
         });
     }
 
