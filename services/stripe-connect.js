@@ -186,8 +186,6 @@ async function createCheckoutSession(planKey, customerEmail, authToken) {
     payment_method_types: ['card'],
     line_items: [{ price: priceId, quantity: 1 }],
     subscription_data: {
-      // trial_period_days must be <= 730 for Stripe Connect
-      trial_period_days: plan.trial_days,
       // Use 'plan' key so server.js verify and checkout-success.html can read it back
       metadata: { plan: planKey },
       // Stripe Connect: transfer the charge to the connected account
