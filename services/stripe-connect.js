@@ -44,24 +44,21 @@ const PLANS = {
   // ── Sole Trader ─────────────────────────
   monthly: {
     name: 'FinOwl — Sole Trader Monthly',
-    amount: 5900,    // £59.00
+    amount: 2000,  // £20.00
     interval: 'month',
     interval_count: 1,
-    trial_days: 30,
   },
   annual: {
     name: 'FinOwl — Sole Trader Annual',
-    amount: 64900,   // £649.00
+    amount: 22000,  // £220.00
     interval: 'year',
     interval_count: 1,
-    trial_days: 30,
   },
   biennial: {
     name: 'FinOwl — Sole Trader 2-Year',
-    amount: 129800,  // £1,298.00
+    amount: 44000,  // £440.00
     interval: 'year',
     interval_count: 2,
-    trial_days: 30,
   },
 
   // ── Dormant Business ────────────────────
@@ -70,44 +67,38 @@ const PLANS = {
     amount: 1500,    // £15.00
     interval: 'month',
     interval_count: 1,
-    trial_days: 30,
   },
   'dormant-annual': {
     name: 'FinOwl — Dormant Business Annual',
     amount: 16500,   // £165.00
     interval: 'year',
     interval_count: 1,
-    trial_days: 30,
   },
   'dormant-biennial': {
     name: 'FinOwl — Dormant Business 2-Year',
     amount: 33000,   // £330.00
     interval: 'year',
     interval_count: 2,
-    trial_days: 30,
   },
 
   // ── Limited Company ─────────────────────
   'ltd-monthly': {
     name: 'FinOwl — Limited Company Monthly',
-    amount: 8900,    // £89.00
+    amount: 2900,  // £29.00
     interval: 'month',
     interval_count: 1,
-    trial_days: 30,
   },
   'ltd-annual': {
     name: 'FinOwl — Limited Company Annual',
-    amount: 97900,   // £979.00
+    amount: 31900,  // £319.00
     interval: 'year',
     interval_count: 1,
-    trial_days: 30,
   },
   'ltd-biennial': {
     name: 'FinOwl — Limited Company 2-Year',
-    amount: 195800,  // £1,958.00
+    amount: 63800,  // £638.00
     interval: 'year',
     interval_count: 2,
-    trial_days: 30,
   },
 };
 
