@@ -1060,7 +1060,7 @@ app.get('/api/categories', authenticateToken, async (req, res) => {
 // BANK CONNECTIONS API
 // ═══════════════════════════════════════════════════════════
 
-app.get('/api/bank/connections', authenticateToken, async (req, res) => {
+app.get('/api/bank/connections', authenticateToken, requireActiveSubscription, async (req, res) => {
   try {
     const result = await pool.query(
       'SELECT * FROM bank_connections WHERE user_id = $1 ORDER BY connected_at DESC',
