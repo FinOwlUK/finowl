@@ -1568,7 +1568,7 @@ app.get('/api/auth/truelayer/callback', async (req, res) => {
 
 // ─── Manual sync endpoint ─────────────────────────────────────
 // POST /api/bank/sync/:connectionId
-app.post('/api/bank/sync/:connectionId', authenticateToken, async (req, res) => {
+app.post('/api/bank/sync/:connectionId', authenticateToken, requireActiveSubscription, async (req, res) => {
   try {
     const { connectionId } = req.params;
     const connResult = await pool.query(
