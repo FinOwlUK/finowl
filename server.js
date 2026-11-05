@@ -379,7 +379,32 @@ function requireOwner(req, res, next) {
   }
   next();
 }
+async function requireActiveSubscription(req, res, next) {
+  try {
+    const result = await pool.query(
+      'SELECT subscription_status FROM users WHERE id = $1',
+      [req.user.userId]
+    );
 
+    if (!result.rows[0]) {
+      return res.status(401).json({ error: 'User not found' });
+    }
+
+    if (result.rows[0].subscription_status !== 'active') {
+      return res.status(403).json({
+        error: 'Active subscription required',
+        code: 'SUBSCRIPTION_REQUIRED'
+      });
+    }
+
+    next();
+  } catch (err) {
+    console.error('Subscription check error:', err);
+    return res.status(500).json({
+      error: 'Unable to verify subscription'
+    });
+  }
+}
 // ─── Health Check ───────────────────────────────────────
 app.get('/health', (req, res) => {
   res.json({ status: 'healthy' });
