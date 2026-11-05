@@ -1073,7 +1073,7 @@ app.get('/api/bank/connections', authenticateToken, requireActiveSubscription, a
   }
 });
 
-app.post('/api/bank/connect-demo', authenticateToken, requireOwner, async (req, res) => {
+app.post('/api/bank/connect-demo', authenticateToken, requireActiveSubscription, requireOwner, async (req, res) => {
   try {
     const userId = req.user.userId;
 
