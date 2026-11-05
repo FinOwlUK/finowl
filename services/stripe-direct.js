@@ -177,7 +177,7 @@ async function createCheckoutSession(planKey, customerEmail, authToken) {
     subscription_data: {
       metadata: { plan: planKey },
     },
-    success_url: `${appUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}&plan=${planKey}&token=${authToken || ''}`,
+    success_url: `${appUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}&plan=${planKey}`,
     cancel_url: `${appUrl}/#pricing`,
     billing_address_collection: 'required',
   };
@@ -209,16 +209,15 @@ async function verifyCheckoutSession(sessionId) {
     expand: ['subscription'],
   });
 
-  if (session.payment_status !== 'paid' && session.status !== 'complete') {
-    // Allow 'trialing' — trial subscriptions report payment_status = 'no_payment_needed'
-    const sub = session.subscription;
-    const subStatus = sub?.status;
-    if (!['active', 'trialing'].includes(subStatus)) {
-      throw Object.assign(new Error('Payment not completed'), {
-        status: session.payment_status,
-      });
-    }
-  }
+  if (
+  session.status !== 'complete' ||
+  session.payment_status !== 'paid' ||
+  session.subscription?.status !== 'active'
+) {
+  throw Object.assign(new Error('Payment not completed or subscription not active'), {
+    status: 402
+  });
+}
 
   const subscription = session.subscription;
   const planKey =
