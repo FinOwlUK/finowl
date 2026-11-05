@@ -233,7 +233,7 @@ async function verifyCheckoutSession(sessionId) {
     amount_total: session.amount_total,
     currency: session.currency,
     planKey,
-    subscription_status: subscription?.status || 'active',
+    subscription_status: subscription?.status || 'unknown',
   };
 }
 
